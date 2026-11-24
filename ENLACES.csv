@@ -1,0 +1,91 @@
+categoria,nombre,url,nota
+Video,Is GTA 6 Really PORTED to PC (fact checked),https://www.youtube.com/watch?v=P0o-Fh-VSxo,Code Bear 23-11-2026
+Video,Canal Code Bear,https://www.youtube.com/@thecodebear,
+Prensa,XDA exe filtrado,https://www.xda-developers.com/gta-6-xbox-executable-leaked-opening-door-for-pc-recompilation-projects-begin-testing/,Bloquea bots
+Prensa,GamesRadar almost boots,https://www.gamesradar.com/games/grand-theft-auto/gta-6-pc-version-is-close-modders-say-after-cyberleek-releases-executable-the-game-almost-boots/,
+Prensa,TweakTown 3 horas,https://www.tweaktown.com/news/114839/gta-6-boots-on-pc-only-3-hours-after-xbox-executable-leaked/index.html,
+Prensa,VGTimes menus no gameplay,https://vgtimes.com/gaming-news/175531-unverified-gta-6-pc-videos-show-menus-not-gameplay.html,
+Prensa,Notebookcheck exe,https://www.notebookcheck.net/Cyberleek-releases-GTA-6-Xbox-build-exe-boosting-playable-PC-port-chances.1457977.0.html,
+Prensa,LevelUp build 1.0.2.1,https://www.levelup.com/en/news/cyberleek-leaks-gta-6s-executable-file-and-modders-are-already-working-on-a-playable-pc-version/,
+Prensa,TwistedVoxel dev abandona,https://twistedvoxel.com/gta-6-pc-recompilation-leonida-developer-quits/,
+Prensa,MakeUseOf port no oficial,https://www.makeuseof.com/gta-6-unofficial-pc-port-on-its-way/,Bloquea bots
+Prensa,XDA hoax GTA V reciclado,https://www.xda-developers.com/that-viral-gta-6-pc-port-video-hoax-made-from-recycled-gta-5-footage/,Bloquea bots
+Prensa,Notebookcheck PS5 Pro DLSS5,https://www.notebookcheck.net/GTA-6-PS5-Pro-performance-jumps-to-280-fps-on-PC-with-DLSS-5-transforming-Lucia.1453555.0.html,
+Prensa,Basic Tutorials VirusTotal,https://basic-tutorials.com/news/gta-6-pc-cyberleek-releases-xbox-exe-leonida-port-remains-unreleased/,
+Tracker,GTA6 PC race,https://vuyp.github.io/gta6-pc-race/,Claims auto-reportados
+Repo,VIctory,https://github.com/marvisak/VIctory,GTA VI runtime
+Repo,XCL,https://github.com/ivall/xcl,Compat layer
+Repo,Xbox2Windows,https://github.com/R0Y00/Xbox2Windows,Recompilacion estatica
+Repo,GTA6-BootTest,https://github.com/OnlyMoisties/GTA6-BootTest,DLLs stand-in
+Repo,Leonida continuacion,https://github.com/ubiquitarianism/leonida,GPL-3.0
+Repo,ProjectLeonidaL,https://github.com/ProjectLeonidaL/leonida,Fork
+Repo,LeonidaReforge,https://github.com/LeonidaReforge/Leonida,Fork
+Repo,avivetech Leonida,https://github.com/avivetech/Leonida,Fork
+Repo,palmetto,https://github.com/luizwidmer/palmetto,Fork
+Repo,leonida-ce,https://github.com/IAmNotSiob/leonida-ce,Fork
+Repo,LONDBackup,https://github.com/Cappi1998/LONDBackup,Fork
+Repo,AnyXboxX,https://github.com/LooperSalty/AnyXboxX,HLE Unicorn
+Repo,OpenScarlett,https://github.com/californiaAlmonds/OpenScarlett,Compat layer
+Repo,XValkyrie,https://github.com/sammwyy/xvalkyrie,Compat layer
+Repo,zenith-x,https://github.com/TrinitronClient/zenith-x,Compat layer
+Repo,palmwave,https://github.com/fablinoo/palmwave,Fork de XCL
+Repo,Awesome GTA6 RE,https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering,Lista curada
+Repo,GTA6-Asset-Info,https://github.com/TrinitronClient/GTA6-Asset-Info,Specs de formato
+Repo,rpf9-explorer,https://github.com/breadbbbb/rpf9-explorer,Explorador RPF9
+Repo,PercyStar,https://github.com/rpatty-dev/PercyStar,Explorador RPF9
+Repo,SixNG,https://github.com/holdmysocks/SixNG,Assets
+Repo,bcpack-rs,https://github.com/Ahmet-Dedeler/bcpack-rs,Decoder BCPack
+Busqueda,Repos gta 6,https://github.com/search?q=gta+6&type=repositories&s=stars&o=desc,
+Busqueda,Repos gta6,https://github.com/search?q=gta6&type=repositories&s=stars&o=desc,
+Busqueda,Repos leonida,https://github.com/search?q=leonida&type=repositories&s=stars&o=desc,
+Busqueda,Topic gta6,https://github.com/topics/gta6,
+Busqueda,Topic leonida,https://github.com/topics/leonida,
+Busqueda,Topic xbox-series-x,https://github.com/topics/xbox-series-x,
+Busqueda,Topic reverse-engineer-anything,https://github.com/topics/reverse-engineer-anything,
+Legal,DMCA Take-Two 18-11-2026,https://github.com/github/dmca/blob/master/2026/11/2026-11-18-take-two.md,Es sobre Muguet GTA V
+Legal,DMCA Take-Two re3 2021,https://github.com/github/dmca/blob/master/2021/02/2021-02-19-take-two.md,
+Legal,TorrentFreak demanda re3,https://torrentfreak.com/take-two-sues-enthusiasts-behind-gta-fan-projects-re3-revc-210903/,
+Legal,Dexerto Zelnick,https://www.dexerto.com/gta/gta-6-boss-sends-warning-to-pirates-who-make-ai-generated-pc-version-before-official-release-3426850,
+Legal,RTE GTA hacker,https://www.rte.ie/news/2026/1123/1600335-gta-hacker/,
+Seguridad,Cyber Security News 355 dominios,https://cybersecuritynews.com/fake-gta-6-pc-launchers/,
+Seguridad,Netcraft,https://www.netcraft.com/blog/how-attackers-are-capitalizing-on-the-hype-around-the-grand-theft-auto-vi-release,
+Seguridad,MakeTechEasier scam kit,https://maketecheasier.com/gta-6-pc-port-scam-kit/,
+Oficial,Xbox Wire cloud 10-11,https://news.xbox.com/en-us/2026/11/10/grand-theft-auto-6-comes-to-xbox-cloud-gaming-november-19,
+Oficial,Xbox Wire cloud y remote play 23-11,https://news.xbox.com/en-us/2026/11/23/grand-theft-auto-vi-xbox-cloud-and-remote-play,
+Oficial,Ficha GTA VI Xbox,https://www.xbox.com/es-es/games/grand-theft-auto-vi,
+Oficial,PS Portal cloud,https://www.playstation.com/en-us/support/subscriptions/psportal-cloud-game-streaming,
+Oficial,Xbox Cloud Gaming,https://www.xbox.com/play,
+Herramienta,Ghidra,https://github.com/NationalSecurityAgency/ghidra,
+Herramienta,radare2,https://github.com/radareorg/radare2,
+Herramienta,Rizin,https://github.com/rizinorg/rizin,
+Herramienta,Cutter,https://github.com/rizinorg/cutter,
+Herramienta,x64dbg,https://github.com/x64dbg/x64dbg,
+Herramienta,Frida,https://github.com/frida/frida,
+Herramienta,Unicorn,https://github.com/unicorn-engine/unicorn,
+Herramienta,Qiling,https://github.com/qilingframework/qiling,
+Herramienta,angr,https://github.com/angr/angr,
+Herramienta,RetDec,https://github.com/avast/retdec,
+Herramienta,ImHex,https://github.com/WerWolv/ImHex,
+Herramienta,PE-bear,https://github.com/hasherezade/pe-bear,
+Herramienta,Detect It Easy,https://github.com/horsicq/Detect-It-Easy,
+Herramienta,capa,https://github.com/mandiant/capa,
+Herramienta,FLARE VM,https://github.com/mandiant/flare-vm,
+Herramienta,LIEF,https://github.com/lief-project/LIEF,
+Herramienta,Binary Ninja API,https://github.com/Vector35/binaryninja-api,
+Herramienta,crackmes.one,https://crackmes.one,
+Aprender,OpenRW,https://github.com/rwengine/openrw,
+Aprender,N64Recomp,https://github.com/N64Recomp/N64Recomp,
+Aprender,Zelda64Recomp,https://github.com/Zelda64Recomp/Zelda64Recomp,
+Aprender,UnleashedRecomp,https://github.com/hedge-dev/UnleashedRecomp,
+Aprender,Xenia,https://github.com/xenia-project/xenia,
+Aprender,Xemu,https://github.com/xemu-project/xemu,
+Aprender,RPCS3,https://github.com/RPCS3/rpcs3,
+Aprender,shadPS4,https://github.com/shadps4-emu/shadPS4,
+Aprender,Kyty,https://github.com/InoriRus/Kyty,
+REA,awesome-reverse-engineer-anything,https://github.com/AIshihzong/awesome-reverse-engineer-anything,
+REA,REA_Skill,https://github.com/smartworldarafath/REA_Skill,
+REA,awesome-rea,https://github.com/git-sanbu/awesome-rea,
+REA,reverse-engineering-atlas,https://github.com/jammyfu/reverse-engineering-atlas,
+REA,REA-Windows-Github,https://github.com/tonchovet/REA-Windows-Github,
+REA,DecompileAnything,https://github.com/DrBellubins/DecompileAnything,
+REA,rea-pro-max,https://github.com/hieunguyenak92/rea-pro-max,
