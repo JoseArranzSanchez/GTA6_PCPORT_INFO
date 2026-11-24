@@ -6,6 +6,8 @@
 
 > **Aviso importante**
 > En este informe **no incluyo enlaces ni instrucciones para descargar el ejecutable filtrado, descifrarlo, extraer claves ni eludir las protecciones de la consola**. Esa es exactamente la parte que Take-Two está persiguiendo con DMCA y demandas, y la que convierte el proyecto en delito en España y en EE. UU. El resto —qué existe, qué es real, qué se puede aprender y cómo jugar barato— sí está desarrollado.
+>
+> **Alcance:** este repositorio es documentación e investigación. No contiene archivos del juego, claves ni instrucciones de elusión. Lee [DISCLAIMER.md](DISCLAIMER.md). Licencia del contenido original: [CC BY 4.0](LICENSE).
 
 ---
 
@@ -237,6 +239,39 @@ Checklist rápida:
 - Que un equipo pequeño **puede** llevar un binario de consola a mostrar menús en Windows en días. Eso es un logro real.
 - Que "mostrar menús" y "jugar" están separados por un abismo: mundo, streaming, GPU, memoria, audio, input, físicas, misiones.
 - Que el cuello de botella no es la CPU: es **la GPU, la memoria y el sistema**.
+
+### 4.5. Mapa de brechas: de los menús a "jugable"
+
+La sección 4.2 explica por qué la arquitectura no basta. Esta desglosa el trabajo que queda, capa por capa.
+
+> Análisis de ingeniería de alto nivel. **No es una guía de ejecución** del binario filtrado ni incluye offsets, claves, parches o instrucciones de elusión.
+
+| Capa | Qué ya hay | Qué falta | Dificultad |
+|---|---|---|---|
+| **1. Carga y arranque** | Loader PE, imports, memoria, sistema de archivos | Poco; es la parte más resuelta | Baja |
+| **2. Device y UI** | Device D3D12, swapchain, 2D, vídeo, input | Poco; los menús ya se dibujan | Baja-media |
+| **3. Mundo** | RPF9, texturas, modelos, streaming inicial | Streaming completo, LOD, colisiones, interiores | Alta |
+| **4. Render del mundo** | Traducción de shaders a DXIL/SPIR-V | Compute, iluminación, sombras, materiales, post-proceso, barriers | **Muy alta** |
+| **5. Simulación** | Nada relevante | Físicas, animación, IA, tráfico, misiones, clima | **Muy alta** |
+| **6. Audio** | Parcial | XAudio2/XMA2, mezcla, APU | Media |
+| **7. Memoria** | `xmem` básico | Alias/commit/decommit, residencia, pools de 10+6 GB | **Muy alta** |
+| **8. Threading** | Parcial | Job system de 8 núcleos, fibers, waits, prioridades | Alta |
+| **9. Rendimiento** | 0,5-1,8 s/frame en el mundo | Bajar a 33 ms sin romper la imagen | **Muy alta** |
+| **10. Verificación** | Claims auto-reportados | Capturas de referencia, matriz de GPUs, CI, regresión | Alta |
+
+**GPU: traducir no es preservar semántica.** XCL declara haber traducido 26.698 programas y VIctory 26.503, pero una traducción correcta no es lo mismo que una traducción fiel. RDNA2 tiene wave32/wave64, máscaras de lanes, LDS, descriptors bindless, flush de denormales, NaN, saturación, integer dot products y reglas de bounds checking que DXIL no replica 1:1. Un solo intrinsic mal traducido en un compute shader deja el mundo negro o cuelga el driver. Y lo que falta no es un shader: es **todo el pipeline GPU-driven** (culling, skinning, partículas, pelo, niebla volumétrica, iluminación diferida y post-proceso). Los menús usan un subconjunto 2D; el mundo usa el motor entero.
+
+**Memoria: el muro real.** Series X tiene 16 GB unificados en dos pools (10 GB rápidos + 6 GB lentos) y el juego usa `xmem` para aliasar, reservar y liberar memoria como si fuera suya. En PC hay VRAM y RAM separadas. La capa de compatibilidad tiene que emular ese espacio de direcciones, la residencia y las barreras. Si un recurso queda en el estado equivocado no ves un error: ves basura, un cuelgue o un TDR del driver. Los propios repos piden ~15 GB de RAM; con 16 GB de VRAM se va al límite.
+
+**Streaming y threading: el mundo no es una pantalla.** Cargar el RPF9 y dibujar la primera pantalla es la parte fácil. Falta el **streaming de celdas** (LOD, interiores, colisiones, navmesh) y el **job system** que reparte física, animación, IA y tráfico entre 8 núcleos con fibers y wait-on-address. En PC el scheduler es distinto: aparecen deadlocks, inversiones de prioridad y carreras que en los menús no existen. Por eso "carga el mundo" y "se puede jugar" son hitos distintos.
+
+**Rendimiento: el frame actual está incompleto.** Ese 0,5-1,8 s/frame es con la escena en negro y sin compute. Al añadir iluminación, sombras y post-proceso, el coste **sube**, no baja. Para 30 fps hacen falta entre 15 y 60 veces menos tiempo, y además evitar que Windows reinicie el driver por TDR (2 s por defecto). No se arregla con una GPU más rápida: se arregla corrigiendo el pipeline.
+
+**Verificación: sin referencia no hay prueba.** Los resultados públicos son auto-reportados, en una sola máquina y sin capturas comparables. Para verificar de verdad hace falta una referencia (captura de consola, traza de API, frame capture), una matriz de GPUs y drivers, y tests de regresión. Eso es trabajo de laboratorio, no de un fin de semana.
+
+**Por qué "llega al menú" engaña.** Un menú ejercita arranque, sistema de archivos, renderer 2D, vídeo, input y un subconjunto pequeño de D3D12. El mundo ejercita streaming, compute, culling, materiales, físicas, animación, audio 3D, memoria y los 8 núcleos. Es la diferencia entre arrancar el coche y ganar una carrera. El hito es real y meritorio, pero cubre un porcentaje pequeño del motor.
+
+**Orden de magnitud.** No hay una cifra honesta, pero el trabajo restante es del orden de **un equipo de 5-15 personas durante 1-3 años**, con hardware Windows y GPU de 16 GB, y acceso legal al binario. Los proyectos públicos llevan días y ya se han fragmentado en seis forks; Leonida cerró en 72 horas. No es un problema de talento: es que queda la mayor parte del motor.
 
 ---
 
