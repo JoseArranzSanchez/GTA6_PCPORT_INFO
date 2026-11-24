@@ -1,13 +1,43 @@
-# GTA VI en PC / Xbox Series X — Informe de viabilidad
+# GTA VI en PC / Xbox Series X — Informe abierto de viabilidad
 
-**Fecha de corte:** 24 de noviembre de 2026
-**Caso:** intentar ejecutar en PC la build de Xbox Series X|S de GTA VI, con presupuesto mínimo y sin ordenador local.
-**Documento:** investigación técnica, de mercado y legal. No es asesoramiento jurídico.
+**Documento:** investigación técnica, de mercado y legal sobre el estado del port no oficial de GTA VI a PC.
+**Audiencia:** cualquier persona interesada en el tema, sin necesidad de conocimientos previos.
+**Corte de datos:** 24 de noviembre de 2026, 19:00 CET (18:00 UTC).
+**Última revisión:** 24-11-2026, 19:00 CET.
+**Naturaleza:** documentación e investigación. No es asesoramiento jurídico.
 
 > **Aviso importante**
-> En este informe **no incluyo enlaces ni instrucciones para descargar el ejecutable filtrado, descifrarlo, extraer claves ni eludir las protecciones de la consola**. Esa es exactamente la parte que Take-Two está persiguiendo con DMCA y demandas, y la que convierte el proyecto en delito en España y en EE. UU. El resto —qué existe, qué es real, qué se puede aprender y cómo jugar barato— sí está desarrollado.
+> En este informe **no se incluyen enlaces ni instrucciones para descargar el ejecutable filtrado, descifrarlo, extraer claves ni eludir las protecciones de la consola**. Esa es exactamente la parte que Take-Two está persiguiendo con DMCA y demandas, y la que convierte el proyecto en delito en España y en EE. UU. El resto —qué existe, qué es real, qué se puede aprender y cómo jugar barato— sí está desarrollado.
 >
-> **Alcance:** este repositorio es documentación e investigación. No contiene archivos del juego, claves ni instrucciones de elusión. Lee [DISCLAIMER.md](DISCLAIMER.md). Licencia del contenido original: [CC BY 4.0](LICENSE).
+> **Alcance:** este repositorio es documentación e investigación. No contiene archivos del juego, claves ni instrucciones de elusión. Ver [DISCLAIMER.md](DISCLAIMER.md). Licencia del contenido original: [CC BY 4.0](LICENSE).
+
+## Sobre este documento
+
+- **Corte de datos:** 24-11-2026, 19:00 CET (18:00 UTC). Todo lo que sigue es una foto de ese momento.
+- **Qué se consultó:** API de GitHub (búsquedas y metadatos de repositorios), fichas y READMEs de los proyectos, prensa enlazada, Xbox Wire, avisos DMCA de GitHub y el vídeo de Code Bear.
+- **Cómo se fecha:** cada sección indica la fecha de corte de sus datos. Las fechas de publicación se muestran cuando la fuente las hace visibles; si no, se indica "n/d".
+- **Limitaciones:** los estados de los proyectos son auto-reportados y no se han reproducido de forma independiente. Las cifras de GitHub cambian a diario e incluyen ruido.
+- **Zona horaria:** Europe/Madrid (CET, UTC+1).
+
+### Trazabilidad de la información
+
+| Bloque | Consultado por última vez | Publicado |
+|---|---|---|
+| Vídeo de Code Bear | 24-11-2026, 19:00 CET | 23-11-2026 |
+| Prensa y análisis | 24-11-2026, 15:20-15:45 CET | n/d en la mayoría |
+| Repositorios y metadatos | 24-11-2026, 19:00 CET (principales) / 15:30-15:45 CET (forks) | último push: 24-11-2026 |
+| DMCA y legal | 24-11-2026, 15:35-15:45 CET | 18-11-2026 y 19-02-2021 |
+| Xbox Wire / cloud | 24-11-2026, 15:35-15:45 CET | 10-11-2026 y 23-11-2026 |
+| Topic `reverse-engineer-anything` | 24-11-2026, 15:30-15:45 CET; recuento a las 19:00 CET | n/d |
+
+### Estado a esta hora (24-11-2026, 19:00 CET)
+
+- **GTA VI:** lanzado el 19-11-2026 en PS5 y Xbox Series X|S; sin versión PC anunciada.
+- **Port no oficial:** ningún proyecto público es jugable; el mejor estado es menús y carga de mundo en negro.
+- **Repositorios:** XCL y VIctory siguen activos; el Leonida original cerró el 23-11 y hay al menos seis continuaciones.
+- **Cambio de nombre:** XCL pasó de `ivall/xcl` a `xcl-dev/xcl`; GitHub redirige la URL antigua.
+- **Legal:** Take-Two mantiene retiradas por DMCA; la DMCA del 18-11 es de GTA V (Muguet), no de GTA VI.
+- **Cloud:** GTA VI en Xbox Cloud Gaming solo para consolas Xbox; en PC solo Remote Play desde una consola.
 
 ---
 
@@ -16,9 +46,9 @@
 1. **GTA VI salió el 19-11-2026 en PS5 y Xbox Series X|S. No hay versión de PC anunciada.** El rumor más citado habla de Q1 2027, pero Rockstar no lo ha confirmado.
 2. **No existe un emulador general de Xbox Series X|S.** Lo que hay son capas de compatibilidad y proyectos de recompilación experimentales que, en el mejor caso, arrancan el ejecutable filtrado y llegan a los menús. **Nada es jugable.**
 3. **"La CPU es casi la misma" es cierto y a la vez irrelevante.** La CPU es x86-64 Zen 2, sí, pero el juego habla con un SO derivado de Windows, un hipervisor, las APIs `kernelx`/`d3d12_xs` del GDK y shaders RDNA2 propios. La compatibilidad de instrucciones es ~5 % del problema.
-4. **El plan tal como lo planteas no se puede hacer con 0 € ni sin PC.** No por falta de talento, sino porque hace falta hardware Windows con GPU de 16 GB, el juego filtrado (ilegal) y meses/años de trabajo de un equipo.
-5. **Lo que sí puedes hacer con 0 €:** aprender ingeniería inversa de verdad con herramientas libres y objetivos legales, y contribuir a proyectos open source compilando y pasando tests en la nube (sin hardware).
-6. **Lo más barato para jugar GTA VI hoy en España:** Xbox One de segunda mano + el juego + horas de Xbox Cloud Gaming (la nube solo está habilitada en consolas Xbox), o una Series S usada. Desde un portátil puedes hacer **Remote Play** desde una consola que tenga el juego.
+4. **El plan de ejecutar la build filtrada en local no es viable con 0 € ni sin PC.** No por falta de talento, sino porque hace falta hardware Windows con GPU de 16 GB, el juego filtrado (ilegal) y meses o años de trabajo de un equipo.
+5. **Qué sí es posible con 0 €:** aprender ingeniería inversa con herramientas libres y objetivos legales, y contribuir a proyectos open source compilando y pasando tests en la nube (sin hardware).
+6. **La opción más barata para jugar GTA VI en España:** Xbox One de segunda mano + el juego + horas de Xbox Cloud Gaming (la nube solo está habilitada en consolas Xbox), o una Series S usada. Desde un portátil se puede hacer **Remote Play** desde una consola que tenga el juego.
 
 ---
 
@@ -28,9 +58,13 @@
 |---|---|
 | Título | *Is GTA 6 Really PORTED to PC? (fact checked)* |
 | Canal | Code Bear (`@thecodebear`) |
-| Publicación | 23-11-2026 |
-| Views al analizarlo | ~13.940 |
+| Publicación | 23-11-2026 (la ficha no muestra la hora) |
+| Consulta | 24-11-2026, 15:30 y 19:00 CET |
+| Views / likes en la última consulta | 35.708 / 491 |
+| Créditos | Code Bear (`@thecodebear`), YouTube |
 | Enlace | https://www.youtube.com/watch?v=P0o-Fh-VSxo |
+
+**Créditos del vídeo:** guion, narración y edición a cargo de **Code Bear**. Este documento resume su análisis y enlaza sus fuentes; el mérito del trabajo original es del autor.
 
 **Tesis del vídeo:** cuatro días después del lanzamiento, Internet se llenó de vídeos de "GTA 6 en PC". El grupo **Cyberleek/Cyberleak** había publicado el ejecutable de Xbox y varios equipos amateur competían por hacerlo arrancar en Windows. El autor divide el problema en **5 etapas** (arrancar, imagen, menús, mundo, jugable), revisa **41 clips virales** y concluye que algunos son reales, otros son falsos, y **los reales muestran mucho menos de lo que dicen los titulares**. No hay versión jugable. Los "descargas de GTA 6 PC" son malware.
 
@@ -55,14 +89,14 @@
 
 **Dos avisos sobre el propio vídeo:**
 
-- YouTube lo etiqueta como **"Made with AI"** ("Sounds or visuals were altered or fully generated"). Úsalo como mapa y como lista de fuentes, no como prueba técnica definitiva.
-- El vídeo dice que Take-Two no ha comentado el ejecutable, pero **sí hay una DMCA de Take-Two del 18-11-2026 en GitHub**. Ojo: esa DMCA **no es de GTA VI**, es del proyecto *Muguet* (un port de GTA V a iOS/macOS). Es igualmente relevante porque contiene la doctrina que te afecta: *"bring your own files" no te protege*. Lo detallo en la sección 5.
+- YouTube lo etiqueta como **"Made with AI"** ("Sounds or visuals were altered or fully generated"). Debe usarse como mapa y lista de fuentes, no como prueba técnica definitiva.
+- El vídeo dice que Take-Two no ha comentado el ejecutable, pero **sí hay una DMCA de Take-Two del 18-11-2026 en GitHub**. Ojo: esa DMCA **no es de GTA VI**, es del proyecto *Muguet* (un port de GTA V a iOS/macOS). Es igualmente relevante porque contiene la doctrina aplicable: *"bring your own files" no protege*. Se detalla en la sección 5.
 
 ---
 
 ## 2. Todas las fuentes de la descripción del vídeo
 
-Marqué con ✅ las que respondieron correctamente al comprobarlas y con ⚠️ las que bloquean bots o no pude verificar al 100 %.
+**Método:** se marca con ✅ las fuentes que respondieron correctamente al comprobarlas y con ⚠️ las que bloquean bots o no se pudieron verificar al 100 %. Todas las fuentes de esta sección se consultaron el **24-11-2026 entre las 15:20 y las 15:45 CET**; la fecha de publicación se indica cuando la ficha la muestra y, si no, se registra la fecha de consulta.
 
 ### 2.1. Prensa y análisis
 
@@ -86,7 +120,7 @@ Marqué con ✅ las que respondieron correctamente al comprobarlas y con ⚠️ 
 | Proyecto | Enlace | Qué es |
 |---|---|---|
 | VIctory | https://github.com/marvisak/VIctory | Runtime GTA VI específico |
-| XCL | https://github.com/ivall/xcl | Capa de compatibilidad Xbox Series → Windows |
+| XCL | https://github.com/xcl-dev/xcl | Capa de compatibilidad Xbox Series → Windows |
 | Xbox2Windows | https://github.com/R0Y00/Xbox2Windows | Recompilación estática x64 → C++ |
 | GTA6-BootTest | https://github.com/OnlyMoisties/GTA6-BootTest | DLLs stand-in + harness |
 | Leonida (continuación) | https://github.com/ubiquitarianism/leonida | Interfaz Xbox → PC, GPL-3.0 |
@@ -96,7 +130,7 @@ Marqué con ✅ las que respondieron correctamente al comprobarlas y con ⚠️ 
 
 | Fuente | Enlace | Qué aporta |
 |---|---|---|
-| DMCA de Take-Two, 18-11-2026 | https://github.com/github/dmca/blob/master/2026/11/2026-11-18-take-two.md | ✅ **Es sobre Muguet (GTA V), no GTA VI**; contiene la doctrina "bring your own files no te protege" |
+| DMCA de Take-Two, 18-11-2026 | https://github.com/github/dmca/blob/master/2026/11/2026-11-18-take-two.md | ✅ **Es sobre Muguet (GTA V), no GTA VI**; contiene la doctrina de que "bring your own files" no protege |
 | DMCA de Take-Two a re3/reVC, 2021 | https://github.com/github/dmca/blob/master/2021/02/2021-02-19-take-two.md | ✅ Precedente directo |
 | TorrentFreak — Take-Two demanda a re3/reVC | https://torrentfreak.com/take-two-sues-enthusiasts-behind-gta-fan-projects-re3-revc-210903/ | ✅ |
 | Dexerto — advertencia de Zelnick | https://www.dexerto.com/gta/gta-6-boss-sends-warning-to-pirates-who-make-ai-generated-pc-version-before-official-release-3426850 | ✅ |
@@ -120,21 +154,21 @@ Marqué con ✅ las que respondieron correctamente al comprobarlas y con ⚠️ 
 
 ---
 
-## 3. Estado real del ecosistema (24-11-2026)
+## 3. Estado real del ecosistema (corte: 24-11-2026, 19:00 CET)
 
 ### 3.1. Qué hay en GitHub, en números
 
-Consultas hechas con la API de GitHub el 24-11-2026 (los números cambian cada hora):
+Consultas realizadas con la API de GitHub el **24-11-2026 a las 19:00 CET (18:00 UTC)**. Los números cambian cada hora:
 
 | Búsqueda | Resultados |
 |---|---:|
-| `gta 6` (nombre, descripción, README) | 20.404 |
-| `gta6` | 17.591 |
-| `leonida` | 2.789 |
-| `"grand theft auto vi"` | 486 |
-| `topic:gta6` | 1.114 |
-| `topic:xbox-series-x` | 61 |
-| `topic:reverse-engineer-anything` | 19 |
+| `gta 6` (nombre, descripción, README) | 20.426 |
+| `gta6` | 17.609 |
+| `leonida` | 2.803 |
+| `"grand theft auto vi"` | 417 |
+| `topic:gta6` | 1.118 |
+| `topic:xbox-series-x` | 63 |
+| `topic:reverse-engineer-anything` | 20 |
 
 **Traducción:** no hay 3.000 proyectos de port. Hay decenas de miles de coincidencias, y la inmensa mayoría son:
 
@@ -144,7 +178,7 @@ Consultas hechas con la API de GitHub el 24-11-2026 (los números cambian cada h
 - **falsos emuladores y "preloads"** que son malware o simplemente un ZIP vacío,
 - forks duplicados de los mismos 4-5 proyectos reales.
 
-De los 25 repos más populares que revisé, **menos de 10 tienen código técnico real**. El resto es ruido. Los números de estrellas tampoco son fiables: hay proyectos con 9.000 estrellas creados en 24 horas.
+De los 25 repositorios más populares revisados, **menos de 10 tienen código técnico real**. El resto es ruido. Los números de estrellas tampoco son fiables: hay proyectos con más de 10.000 estrellas creados en menos de 24 horas.
 
 ### 3.2. Las 5 etapas, y quién está en cada una
 
@@ -156,29 +190,29 @@ De los 25 repos más populares que revisé, **menos de 10 tienen código técnic
 | 4. Mundo | Carga de mundo y escena visible | **Solo parcial y oscuro**; 0,3–1,8 s por frame |
 | 5. Jugable | Se puede jugar | **Nadie** |
 
-Los propios autores lo dicen en sus README: "el juego no arranca", "no hay frame completo", "self-reported, una sola máquina". Trátalo como prototipos de laboratorio, no como producto.
+Los propios autores lo dicen en sus README: "el juego no arranca", "no hay frame completo", "self-reported, una sola máquina". Deben tratarse como prototipos de laboratorio, no como producto.
 
 ### 3.3. Los proyectos que importan
 
-> **Nota:** las estrellas son de la fecha de corte. "Estado" es lo que el proyecto **afirma**, no algo que yo haya reproducido. Varios repos han desaparecido en las últimas 48 horas.
+> **Nota:** datos principales refrescados el **24-11-2026 a las 19:00 CET**; los forks y las herramientas de assets se consultaron entre las 15:30 y las 15:45 CET. Las estrellas son de ese momento. "Estado" es lo que el proyecto **afirma**, no algo reproducido de forma independiente. Varios repos han desaparecido en las últimas 48 horas.
 
 | Proyecto | Qué es | Estado declarado | Stars | Nota |
 |---|---|---|---:|---|
-| **XCL** (`ivall/xcl`) | Capa de compatibilidad estilo Wine: ejecuta código x64 nativo y reimplementa `kernelx`, `d3d12_xs`, DirectStorage y XAudio2; traduce shaders RDNA2 a DXIL | Arranca en ~4 s, menús y ajustes, ~30 fps sin crash; **no llega a gameplay**; ~15 GB de RAM. También corre *Minecraft Preview* y *Unicorn Overlord* | 6.8k | El más creíble técnicamente. GPL-2.0 |
-| **VIctory** (`marvisak/VIctory`) | Runtime específico de GTA VI: carga el x86-64 nativo, reimplementa APIs y recompila shaders a DXIL | Boot, intro con sonido, pantalla de inicio a 30 fps; carga el mundo pero la escena está oscura a 0,5–1,8 s/frame; puede colgar el driver | 9.1k | El "más lejos" en lo público, pero **no jugable** |
-| **Leonida** (`ubiquitarianism/leonida`) | Continuación del mayor proyecto de recompilación estática; GPL-3.0 | Su README sigue diciendo que el juego no arranca; 675 issues abiertos | 1.3k | El original `ItsNotRexed/Leonida` cerró el 23-11 |
+| **XCL** (`xcl-dev/xcl`) | Capa de compatibilidad estilo Wine: ejecuta código x64 nativo y reimplementa `kernelx`, `d3d12_xs`, DirectStorage y XAudio2; traduce shaders RDNA2 a DXIL | Arranca en ~4 s, menús y ajustes, ~30 fps sin crash; **no llega a gameplay**; ~15 GB de RAM. También corre *Minecraft Preview* y *Unicorn Overlord* | 7.4k | El más creíble técnicamente. GPL-2.0. 1.019 issues abiertos |
+| **VIctory** (`marvisak/VIctory`) | Runtime específico de GTA VI: carga el x86-64 nativo, reimplementa APIs y recompila shaders a DXIL | Boot, intro con sonido, pantalla de inicio a 30 fps; carga el mundo pero la escena está oscura a 0,5–1,8 s/frame; puede colgar el driver | 10.2k | El "más lejos" en lo público, pero **no jugable**. 1.193 issues abiertos |
+| **Leonida** (`ubiquitarianism/leonida`) | Continuación del mayor proyecto de recompilación estática; GPL-3.0 | Su README sigue diciendo que el juego no arranca; 824 issues abiertos | 1.6k | El original `ItsNotRexed/Leonida` cerró el 23-11 |
 | `ProjectLeonidaL/leonida` | Continuación "oficial" del Proyecto Leonida | Recompilación estática, sin frame completo | 256 | Creado el 24-11 |
 | `LeonidaReforge/Leonida` | Otra continuación | Idem | 379 | Fork con 354 MB de historia |
 | `avivetech/Leonida` | Copia tras la caída de `ItsNotRexed` | Idem | 134 | "main = last upstream main" |
 | `luizwidmer/palmetto` | Runtime "clean-room" | Su autor dice que llega más lejos en el render; sin frame | 118 | Continuación de Leonida |
 | `IAmNotSiob/leonida-ce` | Community edition | Idem | 19 | Duplicado |
 | `Cappi1998/LONDBackup` | Copia de seguridad del árbol | Idem | 20 | Duplicado |
-| **Xbox2Windows** (`R0Y00/Xbox2Windows`) | Recompilación estática: x64 → C++ y gfx1013 → DXIL | Con una build **modificada** que salta asserts, reprodujo la intro y llegó a carga; el .exe sin modificar, los menús y el gameplay **no están verificados** | 1.8k | Investigación, no producto |
-| **AnyXboxX** (`LooperSalty/AnyXboxX`) | HLE del GDK sobre Unicorn + runtime C++ | Créditos iniciales con escena negra a 0,3–0,5 fps | 147 | Prototipo |
+| **Xbox2Windows** (`R0Y00/Xbox2Windows`) | Recompilación estática: x64 → C++ y gfx1013 → DXIL | Con una build **modificada** que salta asserts, reprodujo la intro y llegó a carga; el .exe sin modificar, los menús y el gameplay **no están verificados** | 1.9k | Investigación, no producto. 156 issues abiertos |
+| **AnyXboxX** (`LooperSalty/AnyXboxX`) | HLE del GDK sobre Unicorn + runtime C++ | Créditos iniciales con escena negra a 0,3–0,5 fps | 218 | Prototipo. 39 issues abiertos |
 | **OpenScarlett** (`californiaAlmonds/OpenScarlett`) | Capa de traducción Scarlett: loader PE32+, `d3d12_xs`, `kernelx`, RDNA2 → SPIR-V/DXIL | Corre 6 samples de Microsoft; *Minecraft Preview* jugable; GTA VI solo resuelve imports y crea render targets | 80 | No es específico de GTA |
 | **XValkyrie** (`sammwyy/xvalkyrie`) | Capa de compatibilidad Xbox One + Series | 49 títulos en su tabla: 8 jugables, 12 llegan a menú; GTA VI no | 214 | La más "Wine-like" |
 | **GTA6-BootTest** (`OnlyMoisties/GTA6-BootTest`) | DLLs stand-in, harness de debug y traductor de shaders | Arranca, stream de archivos, frame loop y primera UI; compute/texturas tiled/blending incompletos | 40 | "No game code" |
-| **awesome-gta6-reverse-engineering** | Lista curada de herramientas de RE de GTA VI | Actualizada a 24-11 | 656 | **La mejor puerta de entrada** |
+| **awesome-gta6-reverse-engineering** | Lista curada de herramientas de RE de GTA VI | Actualizada a 24-11 | 670 | **La mejor puerta de entrada** |
 
 ### 3.4. La saga Leonida: la lección más importante
 
@@ -195,7 +229,7 @@ Checklist rápida:
 
 - **Fecha de creación**: si el repo nació esta semana y promete "100 % working", desconfía.
 - **Código vs. README**: abre `src/`, mira commits reales. Un README de 500 líneas con un ZIP no es un proyecto.
-- **Estrellas**: 9.000 estrellas en 24 horas = hype o compra, no calidad.
+- **Estrellas**: 10.000 estrellas en menos de 24 horas = hype, no calidad.
 - **Issues**: un proyecto real tiene bugs reproducibles, logs y discusión técnica. Uno falso tiene "not working" y nada más.
 - **Releases**: binarios con hash, build reproducible, CI. Un `.exe` de 146 MB sin firma es una ruleta rusa.
 - **Claims**: "GTA 6 PC 2026", "preload incluido", "no BIOS", "DLSS 5", "120 fps" → palabras clave de estafa.
@@ -261,7 +295,7 @@ La sección 4.2 explica por qué la arquitectura no basta. Esta desglosa el trab
 
 **GPU: traducir no es preservar semántica.** XCL declara haber traducido 26.698 programas y VIctory 26.503, pero una traducción correcta no es lo mismo que una traducción fiel. RDNA2 tiene wave32/wave64, máscaras de lanes, LDS, descriptors bindless, flush de denormales, NaN, saturación, integer dot products y reglas de bounds checking que DXIL no replica 1:1. Un solo intrinsic mal traducido en un compute shader deja el mundo negro o cuelga el driver. Y lo que falta no es un shader: es **todo el pipeline GPU-driven** (culling, skinning, partículas, pelo, niebla volumétrica, iluminación diferida y post-proceso). Los menús usan un subconjunto 2D; el mundo usa el motor entero.
 
-**Memoria: el muro real.** Series X tiene 16 GB unificados en dos pools (10 GB rápidos + 6 GB lentos) y el juego usa `xmem` para aliasar, reservar y liberar memoria como si fuera suya. En PC hay VRAM y RAM separadas. La capa de compatibilidad tiene que emular ese espacio de direcciones, la residencia y las barreras. Si un recurso queda en el estado equivocado no ves un error: ves basura, un cuelgue o un TDR del driver. Los propios repos piden ~15 GB de RAM; con 16 GB de VRAM se va al límite.
+**Memoria: el muro real.** Series X tiene 16 GB unificados en dos pools (10 GB rápidos + 6 GB lentos) y el juego usa `xmem` para aliasar, reservar y liberar memoria como si fuera suya. En PC hay VRAM y RAM separadas. La capa de compatibilidad tiene que emular ese espacio de direcciones, la residencia y las barreras. Si un recurso queda en el estado equivocado no aparece un error: aparece basura, un cuelgue o un TDR del driver. Los propios repos piden ~15 GB de RAM; con 16 GB de VRAM se va al límite.
 
 **Streaming y threading: el mundo no es una pantalla.** Cargar el RPF9 y dibujar la primera pantalla es la parte fácil. Falta el **streaming de celdas** (LOD, interiores, colisiones, navmesh) y el **job system** que reparte física, animación, IA y tráfico entre 8 núcleos con fibers y wait-on-address. En PC el scheduler es distinto: aparecen deadlocks, inversiones de prioridad y carreras que en los menús no existen. Por eso "carga el mundo" y "se puede jugar" son hitos distintos.
 
@@ -273,9 +307,42 @@ La sección 4.2 explica por qué la arquitectura no basta. Esta desglosa el trab
 
 **Orden de magnitud.** No hay una cifra honesta, pero el trabajo restante es del orden de **un equipo de 5-15 personas durante 1-3 años**, con hardware Windows y GPU de 16 GB, y acceso legal al binario. Los proyectos públicos llevan días y ya se han fragmentado en seis forks; Leonida cerró en 72 horas. No es un problema de talento: es que queda la mayor parte del motor.
 
+### 4.6. Vías para que el port sea funcional (y su estatus legal)
+
+> Esta sección enumera familias de soluciones y su viabilidad, incluidas las no legales, únicamente para explicar por qué no son viables o por qué no existen. **No es una guía de ejecución**: no incluye pasos, claves, offsets, enlaces a material filtrado ni instrucciones para eludir protecciones.
+
+| Vía | Qué requeriría | Estado a 24-11-2026, 19:00 CET | Estatus legal |
+|---|---|---|---|
+| **1. Port oficial** | Que Rockstar desarrolle y publique la versión PC | No anunciado; rumor Q1 2027 | **Legal** |
+| **2. Cloud / Remote Play** | Una consola con el juego y streaming | Xbox Cloud solo consolas; Remote Play a PC funciona | **Legal** |
+| **3. Emulador de Xbox Series X\|S** | Boot chain, hipervisor, claves, GPU, firmware | No existe ninguno público; Xenia es 360 y Xemu es Xbox original | **Ilegal** si se eluden protecciones; sin base técnica pública |
+| **4. Capa de compatibilidad HLE** | Reimplementar `kernelx`, `d3d12_xs`, `xmem`; traducir shaders | XCL/VIctory llegan a menús; no gameplay | El software es legal; ejecutar una copia filtrada, **no** |
+| **5. Recompilación estática** | Traducir x86-64→C++ y gfx1013→DXIL | Xbox2Windows/Leonida, prototipos | La herramienta es legal; el binario de origen, **no** |
+| **6. Reimplementación clean-room** | Escribir un motor compatible con los assets | No existe; años de trabajo | **Legal** si no se copia código; los assets siguen protegidos |
+| **7. "ISO + emulador"** | Un ISO que el emulador sepa montar | **No aplica**: Series X usa MSIXVC cifrado/firmado, no ISO; no hay emulador que lo monte | **No viable**; la elusión es ilegal |
+| **8. Parchear el .exe** | Convertir imports/ABI y reemplazar el renderer | Es lo que intentan HLE/recomp; sin atajo | **Ilegal** sin autorización |
+
+Las vías 3, 4, 5 y 8 solo son viables con una copia no autorizada del juego; la 7, además, no es técnicamente posible. Este documento no desarrolla ninguna de ellas.
+
+**Por qué el emulador no existe.** Un emulador general de Series X|S necesitaría, como mínimo: el boot chain y el firmware, documentación del hipervisor y del sistema de seguridad, las claves de descifrado, la emulación de la GPU RDNA2 con sus extensiones de consola, y años de ingeniería y pruebas con hardware real. Nada de eso es público. Xenia emula Xbox 360 (PowerPC) y Xemu la Xbox original; ninguno ejecuta binarios de Series X. Los proyectos que sí arrancan GTA VI son capas HLE o recompiladores, no emuladores completos.
+
+**Por qué "ISO + emulador" no funciona.** La idea viene de PS2, PSP y Xbox 360, donde el juego se distribuía en una imagen que el emulador montaba. Xbox One y Series X|S no usan ese modelo: el juego va en un paquete MSIXVC cifrado y firmado, sobre un SO derivado de Windows y un hipervisor. Un ISO de un juego de Series X no arrancaría en Xenia ni en Xemu, porque son otra arquitectura y otra generación. Y aunque alguien empaquetara el juego en un ISO, dentro seguiría estando el mismo paquete cifrado: el ISO no elimina la protección. No hay un emulador público que monte ese formato.
+
+**Qué tendría que pasar para que hubiera un emulador.** Haría falta investigación de la cadena de arranque, documentación del hipervisor, volcados de firmware, claves, emulación de GPU y un marco legal que lo permitiera. Hoy no existe ninguna de esas piezas en público, y obtener las claves o el firmware por medios no autorizados es ilícito. Por eso no hay un "Xenia de Series X" ni se espera a corto plazo.
+
+**La vía HLE y la recompilación estática.** No necesitan emular la consola entera: reimplementan las APIs (`kernelx`, `d3d12_xs`, `xmem`) o traducen el código x86-64 y los shaders a algo que Windows entienda. Es lo que hacen XCL, VIctory, Xbox2Windows y Leonida. El problema no es solo técnico: el único binario disponible es el filtrado, y ejecutarlo es infracción. Aun con una copia legal, el trabajo restante es el mundo, la GPU y la memoria (sección 4.5).
+
+**La vía clean-room.** Sería escribir un motor compatible con los assets de RAGE 9 sin copiar código de Rockstar. Es legal en teoría, pero es un proyecto de años, no puede distribuir los assets y no resuelve el problema de "jugar GTA VI" a corto plazo. No es una alternativa realista para una persona.
+
+**La única vía completa y legal.** El **port oficial** es la única que da rendimiento nativo, soporte, guardados y online sin depender de ingeniería inversa. El **cloud / Remote Play** es la única forma legal de jugarlo hoy en una pantalla de PC, con la limitación de que Xbox Cloud para GTA VI está restringido a consolas Xbox y Remote Play necesita una consola con el juego.
+
+**Conclusión.** No hay atajo: el "ISO + emulador" es un mito de otras generaciones, el emulador de Series X|S no existe, y la vía HLE/recompilación es real pero exige el binario filtrado y la mayor parte del motor. La única solución completa y legal es el port oficial; la única forma legal de verlo en PC hoy es Remote Play desde una consola.
+
 ---
 
-## 5. La parte legal (lo que nadie te cuenta en los vídeos)
+## 5. La parte legal (lo que no suele contarse en los vídeos)
+
+*(Marco legal y fuentes consultadas el 24-11-2026 entre las 15:35 y las 15:45 CET.)*
 
 ### 5.1. Descargar y usar la build filtrada es infracción
 
@@ -290,33 +357,35 @@ La sección 4.2 explica por qué la arquitectura no basta. Esta desglosa el trab
 - UE: Directiva 2001/29/CE, art. 6; en España, la Ley de Propiedad Intelectual y el Código Penal.
 - El EULA de Rockstar prohíbe expresamente **reverse engineering, decompilación y elusión**.
 
-### 5.3. "No incluyo archivos del juego" no te salva
+### 5.3. "No incluyo archivos del juego" no exime de responsabilidad
 
 Esta es la parte más importante y la que el vídeo enseña con un caso real:
 
 - La DMCA de Take-Two del **18-11-2026** no va contra GTA VI: va contra **Muguet**, un port de **GTA V** a iOS/macOS.
 - Take-Two pidió tumbar el repo **y sus 263 forks**.
 - Su argumento textual: *"Claiming that this repository does not directly provide game files and requires users to own the game files does not excuse blatant facilitation of an unauthorized reproduction"*.
-- Es decir: **"bring your own files" no es un escudo**. Si el proyecto existe para ejecutar una copia no autorizada, te pueden tumbar igual.
+- Es decir: **"bring your own files" no es un escudo**. Si el proyecto existe para ejecutar una copia no autorizada, puede ser retirado igual.
 
 ### 5.4. Precedentes
 
 - **re3/reVC (2021):** Take-Two demandó a los autores del port de GTA III/Vice City, aunque el código era "clean room" y no incluía assets. El proyecto se retiró.
 - **Muguet (2026):** DMCA masiva, 263 forks.
 - **Caso penal del "GTA hacker" (2026):** condena reciente, citada por RTÉ el 23-11-2026.
-- **GitHub:** además de la retirada, tu cuenta puede ser suspendida. Si contribuyes a un repo infractor, tu nombre queda en el historial.
+- **GitHub:** además de la retirada, la cuenta puede ser suspendida. Si se contribuye a un repo infractor, el nombre queda en el historial.
 
 ### 5.5. Lo que es legal (o mucho menos gris)
 
 - **Reimplementar una API** (como Wine) es legal en sí.
 - **Escribir herramientas de análisis de formatos** (RPF9, TTPF, BCPack) es legal en sí, siempre que no distribuyas claves ni contenido del juego.
-- **Analizar tus propios binarios** (programas que has compilado, software libre, CTFs) es legal.
-- **Volcar tu propio juego de consola** es una zona gris y, en la práctica, requiere eludir protecciones; en España no es una defensa clara. No lo recomiendo.
-- **Jugar en una consola que posees** y hacer Remote Play a tu portátil es 100 % legal.
+- **Analizar binarios propios** (programas compilados por uno mismo, software libre, CTFs) es legal.
+- **Volcar un juego propio de consola** es una zona gris y, en la práctica, requiere eludir protecciones; en España no es una defensa clara. No se recomienda.
+- **Jugar en una consola propia** y hacer Remote Play a un portátil es 100 % legal.
 
 ---
 
-## 6. Ingeniería inversa: el topic que enviaste
+## 6. Ingeniería inversa: el topic de referencia
+
+*(Topic y repos consultados el 24-11-2026 entre las 15:30 y las 15:45 CET; el recuento total se refrescó a las 19:00 CET.)*
 
 ### 6.1. Qué hay realmente en `github.com/topics/reverse-engineer-anything`
 
@@ -332,7 +401,7 @@ El topic tiene **19 repos**. La mayoría son **paquetes de skills para agentes d
 | `DrBellubins/DecompileAnything` | 6 | Decompilación x86 a fuente "byte-matching" (experimental) |
 | `hieunguyenak92/rea-pro-max` | 3 | MCP/skill/CLI de RE |
 
-**Mi lectura:** úsalos para **triaje y automatización**, nunca como sustituto de entender el binario. Un agente que "te explica" un decompilado sin que tú sepas x86-64 es una alucinación con barra de progreso.
+**Valoración:** estos repositorios sirven para **triaje y automatización**, nunca como sustituto de entender el binario. Un agente que "explica" un decompilado sin que el lector sepa x86-64 es una alucinación con barra de progreso.
 
 ### 6.2. El stack de RE que sí importa (todo gratis o con versión free)
 
@@ -370,9 +439,9 @@ El topic tiene **19 repos**. La mayoría son **paquetes de skills para agentes d
 | **RPCS3** | https://github.com/RPCS3/rpcs3 | Emulación de PS3 |
 | **shadPS4** | https://github.com/shadps4-emu/shadPS4 | Emulación de PS4 |
 | **Kyty** | https://github.com/InoriRus/Kyty | PS4/PS5, HLE |
-| **XCL / XValkyrie** | https://github.com/ivall/xcl · https://github.com/sammwyy/xvalkyrie | Capas de compatibilidad de consola |
+| **XCL / XValkyrie** | https://github.com/xcl-dev/xcl · https://github.com/sammwyy/xvalkyrie | Capas de compatibilidad de consola |
 
-**Regla de oro:** practica con binarios que puedas analizar legalmente. Un CTF, un juego open source, tu propio código. No empieces por el binario más protegido del año.
+**Regla de oro:** practicar con binarios que puedan analizarse legalmente. Un CTF, un juego open source o código propio. No empezar por el binario más protegido del año.
 
 ### 6.4. Currículo de 12 semanas (6-8 h/semana, 0 €)
 
@@ -389,20 +458,22 @@ El topic tiene **19 repos**. La mayoría son **paquetes de skills para agentes d
 
 ---
 
-## 7. Cómo llevarlo a cabo con 0 € y sin PC
+## 7. Opciones con 0 € y sin PC
 
-Tu pregunta esconde **tres proyectos distintos**. Los separo porque tienen respuestas muy diferentes.
+*(Precios y disponibilidad consultados el 24-11-2026 entre las 15:35 y las 15:45 CET; pueden variar.)*
 
-### Ruta A — Quiero **jugar** GTA VI sin PC
+El problema esconde **tres proyectos distintos**, con respuestas muy diferentes.
+
+### Ruta A — **Jugar** GTA VI sin PC
 
 | Opción | Coste orientativo | Requisitos | Calidad | Veredicto |
 |---|---|---|---|---|
 | Esperar al port de PC | 0 € ahora; ~80 € el juego; PC de 800-1.500 € después | PC | La mejor | Lo más sensato si no hay prisa |
 | **Xbox One usada + juego + cloud** | 80-150 € consola + 80 € juego + horas/Game Pass (15-20 €/mes) | 20+ Mbps, cuenta Xbox, mando | 1080p, ajustes de Series S, colas | **La vía más barata para jugar ya** |
 | **Series S usada + juego** | 180-250 € + 80 € = **260-330 €** | TV/monitor, HDMI | 1080p/30 aprox. | **Mejor relación calidad/precio** |
-| Series X usada + juego | 320-400 € + 80 € = **400-480 €** | TV 4K | 4K/30 aprox. | Si quieres la mejor consola |
+| Series X usada + juego | 320-400 € + 80 € = **400-480 €** | TV 4K | 4K/30 aprox. | Para la mejor calidad de consola |
 | PS5 + juego | 400-500 € + 80 € | TV | Similar | Misma idea, otra plataforma |
-| Consola de un amigo/familiar + **Remote Play** | 0 € si te la dejan | Su consola encendida + tu portátil/móvil | La de su consola | Legal y gratis, pero depende de otro |
+| Consola de un amigo/familiar + **Remote Play** | 0 € si se presta | Su consola encendida + un portátil o móvil | La de su consola | Legal y gratis, pero depende de otro |
 | Alquiler / centro de gaming | 10-25 €/sesión | — | Alta | Para probarlo un fin de semana |
 | GeForce NOW / Shadow PC | 20-40 €/mes | — | — | **No sirve: no hay versión PC** |
 | "GTA 6 PC" de GitHub/Discord/Telegram | 0 € | — | — | **Estafa/malware + delito** |
@@ -414,22 +485,22 @@ Tu pregunta esconde **tres proyectos distintos**. Los separo porque tienen respu
 - El juego cuesta **79,99 €** (estándar) y **99,99 €** (Ultimate) en España. La edición física es un código, no un disco.
 - Una **Series S** usada está en **180-250 €**; una **Series X**, en **320-400 €**; una **Xbox One**, bastante menos.
 
-**Mi recomendación concreta:** si el objetivo es jugar ya y gastar lo mínimo, **Xbox One usada + GTA VI + una suscripción de cloud por horas**. Si puedes estirar, **Series S usada**: no dependes de la nube, y puedes hacer Remote Play a tu portátil.
+**Recomendación para el menor gasto:** si el objetivo es jugar ya, **Xbox One usada + GTA VI + una suscripción de cloud por horas**. Si el presupuesto lo permite, **Series S usada**: no depende de la nube y permite Remote Play a un portátil.
 
-### Ruta B — Quiero **aprender ingeniería inversa** de verdad (0 €)
+### Ruta B — **Aprender ingeniería inversa** de verdad (0 €)
 
-1. Haz el currículo de 12 semanas de la sección 6.4.
-2. Elige un proyecto legal: OpenRW, N64Recomp, Xenia, shadPS4.
-3. Empieza por issues de documentación/tests, no por el core.
-4. Configura **GitHub Codespaces** (60 h/mes gratis en el plan free, 2 núcleos/8 GB) para trabajar desde cualquier sitio.
-5. Usa **Oracle Cloud Always Free** (4 núcleos ARM Ampere, 24 GB RAM) para Ghidra headless: Ghidra es Java y funciona en ARM64. Es la mejor VM gratis para análisis estático.
-6. Publica tus write-ups. Eso vale más que 9.000 estrellas en un repo de 24 horas.
+1. Completar el currículo de 12 semanas de la sección 6.4.
+2. Elegir un proyecto legal: OpenRW, N64Recomp, Xenia, shadPS4.
+3. Empezar por issues de documentación y tests, no por el core.
+4. Configurar **GitHub Codespaces** (60 h/mes gratis en el plan free, 2 núcleos/8 GB) para trabajar desde cualquier sitio.
+5. Usar **Oracle Cloud Always Free** (4 núcleos ARM Ampere, 24 GB RAM) para Ghidra headless: Ghidra es Java y funciona en ARM64. Es la mejor VM gratis para análisis estático.
+6. Publicar write-ups. Eso vale más que 10.000 estrellas en un repo de 24 horas.
 
-**Lo que NO puedes verificar sin PC:** que el juego renderice, que vaya a 30 fps, que no cuelgue el driver. Eso requiere Windows + GPU + el juego. No hay atajo legal.
+**Lo que no se puede verificar sin PC:** que el juego renderice, que vaya a 30 fps o que no cuelgue el driver. Eso requiere Windows + GPU + el juego. No hay atajo legal.
 
-### Ruta C — "Aun así quiero intentar el port" (no recomendado)
+### Ruta C — "Aun así, intentar el port" (no recomendado)
 
-Si insistes, esto es lo que realmente costaría:
+Si se insiste, esto es lo que costaría realmente:
 
 | Recurso | Mínimo realista | Coste |
 |---|---|---|
@@ -441,7 +512,7 @@ Si insistes, esto es lo que realmente costaría:
 
 Y todo eso **sin** contar con el binario legal, que no existe: la única copia disponible es la filtrada.
 
-**Conclusión:** no es un proyecto de 0 € ni de una persona. Es un proyecto de equipo, con hardware, con abogado y con años. Lo que sí puedes hacer es **contribuir a la parte legal del ecosistema** (herramientas de formato, tests, documentación) y aprender.
+**Conclusión:** no es un proyecto de 0 € ni de una persona. Es un proyecto de equipo, con hardware, con abogado y con años. Lo que sí se puede hacer es **contribuir a la parte legal del ecosistema** (herramientas de formato, tests, documentación) y aprender.
 
 ---
 
@@ -455,12 +526,14 @@ Y todo eso **sin** contar con el binario legal, que no existe: la única copia d
 | "Si el repo no incluye archivos del juego, es legal" | Take-Two ya ha tumbado 263 forks con ese argumento |
 | "Los vídeos de gameplay lo prueban" | 41 clips revisados; muchos son GTA V reciclado o menús. Menús ≠ juego |
 | "3.000 repos = comunidad enorme" | 20.000 coincidencias, pero <10 proyectos técnicos reales |
-| "Con 0 € y un portátil se puede" | Puedes aprender y compilar; no puedes ejecutar ni verificar el juego |
+| "Con 0 € y un portátil se puede" | Se puede aprender y compilar; no se puede ejecutar ni verificar el juego |
 | "La nube de Xbox sirve en PC" | Para GTA VI, no: solo consolas Xbox al lanzamiento |
 
 ---
 
 ## 9. Anexo: enlaces completos
+
+Todos los enlaces de este anexo se comprobaron el **24-11-2026 entre las 15:20 y las 15:45 CET**; los datos de GitHub se refrescaron a las **19:00 CET**. Las URLs pueden cambiar o desaparecer.
 
 ### 9.1. Vídeo y fuentes originales
 
@@ -481,7 +554,7 @@ Y todo eso **sin** contar con el binario legal, que no existe: la única copia d
 ### 9.2. Repos del ecosistema
 
 - https://github.com/marvisak/VIctory
-- https://github.com/ivall/xcl
+- https://github.com/xcl-dev/xcl
 - https://github.com/R0Y00/Xbox2Windows
 - https://github.com/OnlyMoisties/GTA6-BootTest
 - https://github.com/ubiquitarianism/leonida
@@ -580,14 +653,14 @@ Y todo eso **sin** contar con el binario legal, que no existe: la única copia d
 
 ---
 
-## 10. Qué haría yo, en orden
+## 10. Recomendaciones, en orden
 
 1. **No descargar nada** de "GTA 6 PC". Ni el .exe, ni el "preload", ni el "emulador". El riesgo de malware y legal no compensa.
-2. **Decidir el objetivo real**: ¿jugar, aprender o presumir de proyecto? Si es jugar, Ruta A. Si es aprender, Ruta B.
-3. **Si es jugar**: buscar una Xbox One/Series S usada y el juego. Probar Remote Play en tu portátil. Presupuesto cerrado: 260-330 € con Series S.
-4. **Si es aprender**: empezar el currículo de 12 semanas esta semana, con OpenRW o un CTF. Crear cuenta de GitHub y Codespaces.
-5. **Si es investigar**: seguir el tracker y leer los README de XCL/VIctory, pero **no ejecutar** el binario filtrado. Guarda los enlaces y espera al port oficial.
-6. **Si en 2027 sale el port de PC**: cómpralo. Habrá valido la pena esperar.
+2. **Decidir el objetivo real**: jugar, aprender o investigar. Si es jugar, Ruta A. Si es aprender, Ruta B.
+3. **Si el objetivo es jugar**: buscar una Xbox One o Series S usada y el juego. Probar Remote Play en un portátil. Presupuesto cerrado: 260-330 € con Series S.
+4. **Si el objetivo es aprender**: empezar el currículo de 12 semanas, con OpenRW o un CTF. Crear cuenta de GitHub y Codespaces.
+5. **Si el objetivo es investigar**: seguir el tracker y leer los README de XCL/VIctory, pero **no ejecutar** el binario filtrado. Guardar los enlaces y esperar al port oficial.
+6. **Si en 2027 sale el port de PC**: comprarlo. Habrá valido la pena esperar.
 
 ---
 
@@ -595,10 +668,51 @@ Y todo eso **sin** contar con el binario legal, que no existe: la única copia d
 
 La intuición técnica del principio —"la CPU es la misma"— no es una tontería: es la razón por la que estos proyectos existen y por la que XCL puede ejecutar código x64 nativo. Pero confundir "misma ISA" con "mismo sistema" es como decir que un motor diésel y uno de gasolina son iguales porque ambos tienen pistones.
 
-Lo que ha pasado en noviembre de 2026 es fascinante: en cuatro días, una comunidad consiguió llevar un binario de consola a los menús en Windows. También es un buen ejemplo de por qué el hype es peligroso: 9.000 estrellas, 26.000 shaders traducidos, seis forks... y ni un frame jugable. La distancia entre "arranca" y "juego" es la distancia entre un prototipo y un producto.
+Lo que ha pasado en noviembre de 2026 es fascinante: en cuatro días, una comunidad consiguió llevar un binario de consola a los menús en Windows. También es un buen ejemplo de por qué el hype es peligroso: 10.000 estrellas, 26.000 shaders traducidos, seis forks... y ni un frame jugable. La distancia entre "arranca" y "juego" es la distancia entre un prototipo y un producto.
 
-Con 0 € y sin PC puedes aprender muchísimo. Lo que no puedes es saltarte la física, el derecho y 20 años de ingeniería de consolas.
+Con 0 € y sin PC se puede aprender muchísimo. Lo que no se puede es saltarse la física, el derecho y 20 años de ingeniería de consolas.
 
 ---
 
-*Documento generado el 24-11-2026. Los datos de repos, estrellas y estados cambian a diario; vuelve a verificar antes de tomar decisiones.*
+## 12. Créditos y atribuciones
+
+Este documento no sería posible sin el trabajo de las siguientes personas y proyectos. Los errores son responsabilidad del mantenedor del repositorio; los méritos, de quienes hicieron el trabajo original.
+
+### Vídeo de referencia
+
+- **Code Bear** (`@thecodebear`), *Is GTA 6 Really PORTED to PC? (fact checked)*, YouTube, publicado el **23-11-2026**, consultado el **24-11-2026 a las 19:00 CET**. Guion, narración y edición: Code Bear.
+- Enlace: https://www.youtube.com/watch?v=P0o-Fh-VSxo
+
+### Prensa y fuentes citadas
+
+- **XDA Developers** (varios artículos sobre el .exe, el hoax y NotRexed/Hookshot).
+- **GamesRadar+**, **TweakTown**, **VGTimes**, **Notebookcheck**, **LevelUp**, **TwistedVoxel**, **MakeUseOf**, **Basic Tutorials**.
+- **Dexerto**, **RTÉ**, **TorrentFreak**, **Cyber Security News**, **Netcraft**, **MakeTechEasier**.
+- **Xbox Wire** (Microsoft) y **PlayStation Blog / PlayStation Support** para la información oficial de cloud y Remote Play.
+
+### Proyectos y maintainers
+
+- **XCL** (`xcl-dev/xcl`), **VIctory** (`marvisak/VIctory`), **Xbox2Windows** (`R0Y00/Xbox2Windows`), **GTA6-BootTest** (`OnlyMoisties/GTA6-BootTest`).
+- **Leonida** y sus continuaciones: `ubiquitarianism/leonida`, `ProjectLeonidaL/leonida`, `LeonidaReforge/Leonida`, `avivetech/Leonida`, `luizwidmer/palmetto`, `IAmNotSiob/leonida-ce`, `Cappi1998/LONDBackup`.
+- **AnyXboxX** (`LooperSalty/AnyXboxX`), **OpenScarlett** (`californiaAlmonds/OpenScarlett`), **XValkyrie** (`sammwyy/xvalkyrie`), **zenith-x** (`TrinitronClient/zenith-x`), **palmwave** (`fablinoo/palmwave`).
+- **awesome-gta6-reverse-engineering** (`Ahmet-Dedeler`), **GTA6-Asset-Info** (`TrinitronClient`), **rpf9-explorer** (`breadbbbb`), **PercyStar** (`rpatty-dev`), **SixNG** (`holdmysocks`), **bcpack-rs** (`Ahmet-Dedeler`).
+- **Cyberleek/Cyberleak**: grupo que publicó el material filtrado. Se le menciona por contexto periodístico, no se le atribuye ningún mérito técnico ni se enlaza su contenido.
+
+### Herramientas y datos
+
+- **GitHub API** y **GitHub Docs**, por los datos de repositorios y las búsquedas.
+- **Ghidra** (NSA), **radare2**, **Rizin**, **Cutter**, **x64dbg**, **Frida**, **Unicorn**, **Qiling**, **angr**, **RetDec**, **ImHex**, **PE-bear**, **Detect It Easy**, **capa**, **FLARE VM**, **LIEF** y **Binary Ninja**, por la base del stack de ingeniería inversa.
+- **Creative Commons**, por el texto de la licencia CC BY 4.0.
+- **Take-Two Interactive** y **Rockstar Games**, por la información pública sobre el lanzamiento y por los avisos DMCA que permiten explicar el marco legal.
+
+### Cómo citar este documento
+
+> Arranz Sánchez, J. (2026). *GTA VI en PC / Xbox Series X: informe abierto de viabilidad* (corte 24-11-2026, 19:00 CET). GitHub: https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO
+
+### Licencia y marcas
+
+El contenido original se publica bajo **CC BY 4.0** (ver [LICENSE](LICENSE)). Las marcas, citas, capturas y material de terceros pertenecen a sus titulares. *Grand Theft Auto*, *GTA*, *GTA VI* y *Rockstar Games* son marcas de Take-Two Interactive. Este repositorio no está afiliado a Rockstar, Take-Two, Microsoft ni Xbox.
+
+---
+
+*Documento actualizado el 24-11-2026 a las 19:00 CET. Los datos de repositorios, estrellas y estados cambian a diario; deben verificarse antes de tomar decisiones.*
