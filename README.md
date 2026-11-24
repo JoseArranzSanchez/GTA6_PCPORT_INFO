@@ -10,6 +10,8 @@
 > En este informe **no se incluyen enlaces ni instrucciones para descargar el ejecutable filtrado, descifrarlo, extraer claves ni eludir las protecciones de la consola**. Esa es exactamente la parte que Take-Two está persiguiendo con DMCA y demandas, y la que convierte el proyecto en delito en España y en EE. UU. El resto —qué existe, qué es real, qué se puede aprender y cómo jugar barato— sí está desarrollado.
 >
 > **Alcance:** este repositorio es documentación e investigación. No contiene archivos del juego, claves ni instrucciones de elusión. Ver [DISCLAIMER.md](DISCLAIMER.md). Licencia del contenido original: [CC BY 4.0](LICENSE).
+>
+> **¿Has encontrado un error?** Abre un [issue](https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO/issues) con la sección, la frase y la fuente. Las correcciones son bienvenidas.
 
 ## Sobre este documento
 
@@ -17,6 +19,7 @@
 - **Qué se consultó:** API de GitHub (búsquedas y metadatos de repositorios), fichas y READMEs de los proyectos, prensa enlazada, Xbox Wire, avisos DMCA de GitHub y el vídeo de Code Bear.
 - **Cómo se fecha:** cada sección indica la fecha de corte de sus datos. Las fechas de publicación se muestran cuando la fuente las hace visibles; si no, se indica "n/d".
 - **Limitaciones:** los estados de los proyectos son auto-reportados y no se han reproducido de forma independiente. Las cifras de GitHub cambian a diario e incluyen ruido.
+- **Herramientas:** documento elaborado con ayuda de **OpenCode** (agente de IA) y el modelo **DeepSeek V4.1 Flash 1017**, con revisión humana del mantenedor.
 - **Zona horaria:** Europe/Madrid (CET, UTC+1).
 
 ### Trazabilidad de la información
@@ -674,7 +677,65 @@ Con 0 € y sin PC se puede aprender muchísimo. Lo que no se puede es saltarse 
 
 ---
 
-## 12. Créditos y atribuciones
+## 12. Contacto y comunidad
+
+Canales públicos de los proyectos y de las personas que los mantienen. **La vía recomendada para preguntas técnicas es GitHub Issues**, no los mensajes directos: así la respuesta queda documentada y ayuda a otros.
+
+| Proyecto | Maintainer | Canal principal | Otros |
+|---|---|---|---|
+| **XCL** | [@xcl-dev](https://github.com/xcl-dev) | [Discord](https://discord.gg/xcl) | [Repo](https://github.com/xcl-dev/xcl) |
+| **VIctory** | [@Marvisak](https://github.com/Marvisak) | [Issues](https://github.com/Marvisak/VIctory/issues) | [Repo](https://github.com/Marvisak/VIctory) |
+| **Leonida (continuación)** | [@ubiquitarianism](https://github.com/ubiquitarianism) | [Discord](https://discord.gg/ETf4qj5acN) | [Repo](https://github.com/ubiquitarianism/leonida) |
+| **Xbox2Windows** | [@R0Y00](https://github.com/R0Y00) | [Discord](https://discord.gg/DMcmNtpd6R) | [Repo](https://github.com/R0Y00/Xbox2Windows) |
+| **AnyXboxX** | [@LooperSalty](https://github.com/LooperSalty) | [Discord](https://discord.gg/TcX42vRyPU) | [Repo](https://github.com/LooperSalty/AnyXboxX) |
+| **OpenScarlett** | [@californiaAlmonds](https://github.com/californiaAlmonds) | [Discord](https://discord.gg/sShMY2fjR) | [Repo](https://github.com/californiaAlmonds/OpenScarlett) |
+| **XValkyrie** | [@sammwyy](https://github.com/sammwyy) | [X/Twitter](https://x.com/sammwyy) | [Web](https://sammwy.com/) |
+| **GTA6-BootTest** | [@OnlyMoisties](https://github.com/OnlyMoisties) | [Issues](https://github.com/OnlyMoisties/GTA6-BootTest/issues) | [Repo](https://github.com/OnlyMoisties/GTA6-BootTest) |
+| **awesome-gta6-RE** | [@Ahmet-Dedeler](https://github.com/Ahmet-Dedeler) | [Discord](https://discord.gg/CjcDBg3nf) | [X/Twitter](https://x.com/ahmetbuilds) |
+| **GTA6-Asset-Info** | [@TrinitronClient](https://github.com/TrinitronClient) | [Issues](https://github.com/TrinitronClient/GTA6-Asset-Info/issues) | [Repo](https://github.com/TrinitronClient/GTA6-Asset-Info) |
+| **rpf9-explorer** | [@breadbbbb](https://github.com/breadbbbb) | [Issues](https://github.com/breadbbbb/rpf9-explorer/issues) | [Repo](https://github.com/breadbbbb/rpf9-explorer) |
+| **PercyStar** | [@rpatty-dev](https://github.com/rpatty-dev) | [Issues](https://github.com/rpatty-dev/PercyStar/issues) | [Web](https://nitech.dev) |
+| **SixNG** | [@holdmysocks](https://github.com/holdmysocks) | [Issues](https://github.com/holdmysocks/SixNG/issues) | [Web](https://holdmysocks.dev) |
+| **Project Leonida Legacy** | [@ProjectLeonidaL](https://github.com/ProjectLeonidaL) | [Discord](https://discord.gg/dxMD2XqyEJ) | [Repo](https://github.com/ProjectLeonidaL/leonida) |
+| **Vídeo de referencia** | [Code Bear](https://www.youtube.com/@thecodebear) | [YouTube](https://www.youtube.com/@thecodebear) | [Instagram](https://instagram.com/thecodebear) |
+| **Este repositorio** | [@JoseArranzSanchez](https://github.com/JoseArranzSanchez) | [Issues](https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO/issues) | — |
+
+**No se incluyen enlaces de Telegram** porque no se ha podido verificar su titularidad; varios proyectos los publican en sus README, pero no se recomiendan para soporte. Tampoco se incluyen correos o teléfonos personales.
+
+### Cómo escribir un buen issue
+
+1. Versión exacta del proyecto o commit.
+2. Windows, GPU, driver y cantidad de RAM/VRAM.
+3. Pasos para reproducir, qué se esperaba y qué pasó.
+4. Logs y captura; si es un cuelgue, el visor de eventos o el minidump.
+5. Una pregunta concreta, sin mezclar varios temas.
+
+### Qué no hacer
+
+- No pedir builds, claves, ISOs, enlaces a material filtrado ni "el .exe".
+- No adjuntar archivos del juego ni volcados en issues o Discord.
+- No enviar el mismo mensaje a todos los maintainers a la vez.
+- No usar canales no verificados (Telegram, DM, servidores sin normas) para soporte.
+
+### Errores en este documento
+
+Si detectas un error técnico, un enlace roto, una atribución incorrecta o un dato desactualizado, abre un [issue](https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO/issues) con:
+
+- la sección y la frase exacta;
+- la fuente o el dato correcto;
+- si es un enlace, la URL y qué falla.
+
+No uses los issues para pedir builds, claves o material filtrado: esos mensajes se cerrarán.
+
+### Responsabilidad sobre enlaces
+
+Los enlaces de este documento se revisaron el **24-11-2026** y apuntan a páginas públicas de proyectos, prensa y documentación. **No se enlazan descargas, ejecutables, claves ni material filtrado.** No se puede garantizar que el contenido de terceros siga disponible, seguro o sin cambios: la curaduría se limita a la fecha de corte. Si un enlace está roto o parece malicioso, abre un issue y se retira.
+
+Los enlaces también están en [`ENLACES.csv`](ENLACES.csv) (columna `abrir` para Excel/LibreOffice), [`ENLACES.md`](ENLACES.md) (tabla clicable en GitHub) y [`ENLACES.html`](ENLACES.html) (navegador).
+
+---
+
+## 13. Créditos y atribuciones
 
 Este documento no sería posible sin el trabajo de las siguientes personas y proyectos. Los errores son responsabilidad del mantenedor del repositorio; los méritos, de quienes hicieron el trabajo original.
 
@@ -702,6 +763,7 @@ Este documento no sería posible sin el trabajo de las siguientes personas y pro
 
 - **GitHub API** y **GitHub Docs**, por los datos de repositorios y las búsquedas.
 - **Ghidra** (NSA), **radare2**, **Rizin**, **Cutter**, **x64dbg**, **Frida**, **Unicorn**, **Qiling**, **angr**, **RetDec**, **ImHex**, **PE-bear**, **Detect It Easy**, **capa**, **FLARE VM**, **LIEF** y **Binary Ninja**, por la base del stack de ingeniería inversa.
+- **OpenCode** (agente de IA) y **DeepSeek V4.1 Flash 1017**, por la elaboración y revisión del documento. La responsabilidad editorial y los errores son del mantenedor.
 - **Creative Commons**, por el texto de la licencia CC BY 4.0.
 - **Take-Two Interactive** y **Rockstar Games**, por la información pública sobre el lanzamiento y por los avisos DMCA que permiten explicar el marco legal.
 

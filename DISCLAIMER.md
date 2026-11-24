@@ -1,7 +1,7 @@
 # Aviso legal y de alcance
 
 **Repositorio:** GTA6_PCPORT_INFO
-**Última actualización:** 24 de noviembre de 2026
+**Última actualización:** 24 de noviembre de 2026, 19:00 CET
 
 ## 1. Qué es este repositorio
 
@@ -43,9 +43,9 @@ binarios de origen desconocido.**
 
 ## 5. Precisión de los datos
 
-Los datos están tomados a 24-11-2026. El ecosistema cambia a diario. Las cifras
-de estrellas, estados de compatibilidad y resultados son las declaradas por cada
-proyecto, no verificaciones independientes.
+Los datos están tomados a 24-11-2026, 19:00 CET. El ecosistema cambia a diario.
+Las cifras de estrellas, estados de compatibilidad y resultados son las
+declaradas por cada proyecto, no verificaciones independientes.
 
 ## 6. Licencia
 
@@ -57,3 +57,21 @@ pertenecen a sus titulares y no se cubren por esta licencia.
 
 Si eres titular de derechos y consideras que algún contenido infringe, abre un
 issue en el repositorio o contacta con el mantenedor para retirarlo.
+
+Los canales públicos de los proyectos y maintainers están en la sección 12 del
+[README](README.md#12-contacto-y-comunidad).
+
+Para errores del documento (datos, enlaces o atribuciones), abre un issue en el
+repositorio. No uses ese canal para pedir material filtrado.
+
+## 8. Responsabilidad sobre enlaces
+
+- Los enlaces de este repositorio se revisan en la fecha de corte y apuntan a
+  páginas públicas de proyectos, prensa y documentación.
+- **No se enlazan descargas, ejecutables, claves, volcados ni material filtrado.**
+- No se puede garantizar que el contenido de terceros siga disponible, sea seguro
+  o no haya cambiado. La curaduría se limita a la fecha indicada.
+- El mantenedor no responde del contenido, las políticas o las prácticas de
+  sitios de terceros.
+- Si detectas un enlace roto, malicioso o inapropiado, abre un issue para
+  retirarlo.
