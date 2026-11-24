@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Actualiza el estado del proyecto desde la API de GitHub.
+"""Update the project status from the GitHub API.
 
-Genera/actualiza:
-- README.md: bloque entre <!-- AUTO:STATUS:START --> y <!-- AUTO:STATUS:END -->
-- ESTADO.md: tabla completa
-- data/status.json: datos legibles por máquina
+Generates/updates:
+- README.md: block between <!-- AUTO:STATUS:START --> and <!-- AUTO:STATUS:END -->
+- STATUS.md: full table
+- data/status.json: machine-readable data
 
-Uso:
+Usage:
     python tools/update_status.py
-    python tools/update_status.py --render-only   # no consulta la API; usa data/status.json
+    python tools/update_status.py --render-only   # no API calls; use data/status.json
 
-En GitHub Actions se ejecuta cada hora con GITHUB_TOKEN, que da más cuota de API.
-No requiere dependencias externas: solo la biblioteca estándar.
+GitHub Actions runs this every hour with GITHUB_TOKEN, which provides a larger API quota.
+No external dependencies: standard library only.
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-ESTADO = ROOT / "ESTADO.md"
+STATUS = ROOT / "STATUS.md"
 DATA = ROOT / "data" / "status.json"
 
 SEARCHES = [
@@ -89,14 +89,14 @@ def repo_info(full_name: str) -> dict:
 
 
 def fmt_int(value) -> str:
-    return f"{value:,}".replace(",", ".") if isinstance(value, int) else "n/d"
+    return f"{value:,}" if isinstance(value, int) else "n/d"
 
 
 def fmt_k(value) -> str:
     if not isinstance(value, int):
         return "n/d"
     if value >= 1000:
-        return f"{value / 1000:.1f}k".replace(".", ",")
+        return f"{value / 1000:.1f}k"
     return str(value)
 
 
@@ -115,17 +115,17 @@ def load_previous() -> dict:
 
 def last_sunday_utc(year: int, month: int) -> datetime:
     day = datetime(year, month, 31, tzinfo=timezone.utc)
-    while day.weekday() != 6:  # 6 = domingo
+    while day.weekday() != 6:  # 6 = Sunday
         day -= timedelta(days=1)
     return day.replace(hour=1, minute=0, second=0, microsecond=0)
 
 
 def madrid_now(now_utc: datetime) -> tuple[datetime, str]:
-    """Devuelve hora de Madrid y etiqueta CET/CEST.
+    """Return Madrid time and the CET/CEST label.
 
-    En Linux (GitHub Actions) usa zoneinfo. En Windows sin tzdata aplica la
-    regla europea de horario de verano: último domingo de marzo a último de
-    octubre.
+    On Linux (GitHub Actions) it uses zoneinfo. On Windows without tzdata it
+    applies the European summer-time rule: last Sunday of March to last Sunday
+    of October.
     """
     try:
         local = now_utc.astimezone(ZoneInfo("Europe/Madrid"))
@@ -149,7 +149,7 @@ def collect(previous: dict) -> tuple[dict, dict, list[str]]:
             counts[label] = search_count(query)
         except Exception as exc:  # noqa: BLE001
             counts[label] = previous_counts.get(label)
-            errors.append(f"Búsqueda `{query}`: {exc}")
+            errors.append(f"Search `{query}`: {exc}")
 
     repos: dict[str, dict] = {}
     for full_name in REPOS:
@@ -167,7 +167,7 @@ def collect(previous: dict) -> tuple[dict, dict, list[str]]:
                     "archived": True,
                     "status": 404,
                 }
-                errors.append(f"`{full_name}`: 404 (no disponible)")
+                errors.append(f"`{full_name}`: 404 (not available)")
             else:
                 repos[full_name] = previous_repos.get(full_name, {})
                 errors.append(f"`{full_name}`: HTTP {exc.code}")
@@ -183,7 +183,7 @@ def main() -> int:
     parser.add_argument(
         "--render-only",
         action="store_true",
-        help="No consulta la API; renderiza desde data/status.json",
+        help="Do not call the API; render from data/status.json",
     )
     args = parser.parse_args()
 
@@ -191,7 +191,7 @@ def main() -> int:
 
     if args.render_only:
         if not previous:
-            print("No hay data/status.json para --render-only", file=sys.stderr)
+            print("No data/status.json for --render-only", file=sys.stderr)
             return 1
         counts = previous.get("counts", {})
         repos = previous.get("repos", {})
@@ -206,7 +206,7 @@ def main() -> int:
         if not any(isinstance(value, int) for value in counts.values()) and not any(
             repo.get("stars") is not None for repo in repos.values()
         ):
-            print("No se ha obtenido ningún dato; se aborta sin escribir.", file=sys.stderr)
+            print("No data was fetched; aborting without writing.", file=sys.stderr)
             return 1
 
     stamp = local.strftime("%d-%m-%Y, %H:%M") + f" {tz_label}"
@@ -229,68 +229,68 @@ def main() -> int:
     victory = repos.get("Marvisak/VIctory", {})
     leonida = repos.get("ubiquitarianism/leonida", {})
 
-    readme_block = f"""### Estado a esta hora (actualizado automáticamente)
+    readme_block = f"""### Status right now (auto-updated)
 
-**Última actualización:** {stamp} (Europe/Madrid).
+**Last update:** {stamp} (Europe/Madrid).
 
-- **GTA VI:** lanzado el 19-11-2026 en PS5 y Xbox Series X|S; sin versión PC anunciada.
-- **Port no oficial:** ningún proyecto público es jugable; el mejor estado es menús y carga de mundo en negro.
+- **GTA VI:** released on 19-11-2026 on PS5 and Xbox Series X|S; no PC version announced.
+- **Unofficial port:** no public project is playable; the best state is menus and a black world load.
 - **GitHub:** `gta 6` {fmt_int(counts.get("gta 6"))} · `gta6` {fmt_int(counts.get("gta6"))} · `leonida` {fmt_int(counts.get("leonida"))} · `topic:gta6` {fmt_int(counts.get("topic:gta6"))}.
-- **XCL:** {fmt_k(xcl.get("stars"))} estrellas · {fmt_int(xcl.get("open_issues"))} issues+PRs · último push {fmt_date(xcl.get("pushed_at"))}.
-- **VIctory:** {fmt_k(victory.get("stars"))} estrellas · {fmt_int(victory.get("open_issues"))} issues+PRs · último push {fmt_date(victory.get("pushed_at"))}.
-- **Leonida:** {fmt_k(leonida.get("stars"))} estrellas · {fmt_int(leonida.get("open_issues"))} issues+PRs · último push {fmt_date(leonida.get("pushed_at"))}.
-- **Legal:** Take-Two mantiene retiradas por DMCA; la DMCA del 18-11 es de GTA V (Muguet), no de GTA VI.
-- **Cloud:** GTA VI en Xbox Cloud Gaming solo para consolas Xbox; en PC solo Remote Play desde una consola.
+- **XCL:** {fmt_k(xcl.get("stars"))} stars · {fmt_int(xcl.get("open_issues"))} issues+PRs · last push {fmt_date(xcl.get("pushed_at"))}.
+- **VIctory:** {fmt_k(victory.get("stars"))} stars · {fmt_int(victory.get("open_issues"))} issues+PRs · last push {fmt_date(victory.get("pushed_at"))}.
+- **Leonida:** {fmt_k(leonida.get("stars"))} stars · {fmt_int(leonida.get("open_issues"))} issues+PRs · last push {fmt_date(leonida.get("pushed_at"))}.
+- **Legal:** Take-Two continues DMCA takedowns; the 18-11 notice is about GTA V (Muguet), not GTA VI.
+- **Cloud:** GTA VI on Xbox Cloud Gaming is console-only; on PC only Remote Play from a console.
 
-[Detalle completo](ESTADO.md) · [Datos JSON](data/status.json)"""
+[Full detail](STATUS.md) · [JSON data](data/status.json)"""
 
-    estado_lines = [
-        "# Estado del proyecto (actualizado automáticamente)",
+    status_lines = [
+        "# Project status (auto-updated)",
         "",
-        f"**Última actualización:** {stamp} (Europe/Madrid).",
-        "**Fuente:** API de GitHub. **Zona horaria:** Europe/Madrid.",
+        f"**Last update:** {stamp} (Europe/Madrid).",
+        "**Source:** GitHub API. **Time zone:** Europe/Madrid.",
         "",
-        "> Datos de solo lectura. Pueden sufrir retrasos o errores de la API; no es una fuente oficial.",
+        "> Read-only data. It may be delayed or affected by API errors; it is not an official source.",
         "",
-        "## Búsquedas",
+        "## Searches",
         "",
-        "| Búsqueda | Resultados |",
+        "| Search | Results |",
         "|---|---:|",
     ]
     for _, label in SEARCHES:
-        estado_lines.append(f"| `{label}` | {fmt_int(counts.get(label))} |")
-    estado_lines += [
+        status_lines.append(f"| `{label}` | {fmt_int(counts.get(label))} |")
+    status_lines += [
         "",
-        "## Repositorios",
+        "## Repositories",
         "",
-        "| Repositorio | Stars | Forks | Issues+PRs | Último push |",
+        "| Repository | Stars | Forks | Issues+PRs | Last push |",
         "|---|---:|---:|---:|---|",
     ]
     for full_name in REPOS:
         repo = repos.get(full_name, {})
-        estado_lines.append(
+        status_lines.append(
             f"| [`{full_name}`](https://github.com/{full_name}) | {fmt_k(repo.get('stars'))} | "
             f"{fmt_int(repo.get('forks'))} | {fmt_int(repo.get('open_issues'))} | {fmt_date(repo.get('pushed_at'))} |"
         )
-    estado_lines += ["", "## Errores de la última ejecución", ""]
+    status_lines += ["", "## Errors from the last run", ""]
     if errors:
-        estado_lines += [f"- {error}" for error in errors]
+        status_lines += [f"- {error}" for error in errors]
     else:
-        estado_lines.append("Ninguno.")
-    estado_lines.append("")
-    ESTADO.write_text("\n".join(estado_lines), encoding="utf-8")
+        status_lines.append("None.")
+    status_lines.append("")
+    STATUS.write_text("\n".join(status_lines), encoding="utf-8")
 
     readme = README.read_text(encoding="utf-8")
     pattern = re.compile(r"<!-- AUTO:STATUS:START -->.*?<!-- AUTO:STATUS:END -->", re.DOTALL)
     if not pattern.search(readme):
-        print("No se encontraron los marcadores AUTO:STATUS en README.md", file=sys.stderr)
+        print("AUTO:STATUS markers not found in README.md", file=sys.stderr)
         return 1
     replacement = f"<!-- AUTO:STATUS:START -->\n{readme_block}\n<!-- AUTO:STATUS:END -->"
     new_readme = pattern.sub(replacement, readme)
     if new_readme != readme:
         README.write_text(new_readme, encoding="utf-8")
 
-    print(f"Actualizado: {stamp} | errores: {len(errors)}")
+    print(f"Updated: {stamp} | errors: {len(errors)}")
     return 0
 
 
