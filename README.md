@@ -20,6 +20,9 @@
 - **Cómo se fecha:** cada sección indica la fecha de corte de sus datos. Las fechas de publicación se muestran cuando la fuente las hace visibles; si no, se indica "n/d".
 - **Limitaciones:** los estados de los proyectos son auto-reportados y no se han reproducido de forma independiente. Las cifras de GitHub cambian a diario e incluyen ruido.
 - **Herramientas:** documento elaborado con ayuda de **OpenCode** (agente de IA) y el modelo **DeepSeek V4.1 Flash 1017**, con revisión humana del mantenedor.
+- **Actualización automática:** el bloque "Estado a esta hora", [`ESTADO.md`](ESTADO.md) y [`data/status.json`](data/status.json) se regeneran cada hora con GitHub Actions. El resto del documento es curación manual con corte 24-11-2026, 19:00 CET.
+- **Alcance de la automatización:** solo métricas de GitHub (búsquedas, estrellas, issues y último push). Prensa, legal, análisis y contactos son curación manual.
+- **Forzar una actualización:** en GitHub, **Actions → Update status → Run workflow**. El cron es cada hora en el minuto 0 (UTC).
 - **Zona horaria:** Europe/Madrid (CET, UTC+1).
 
 ### Trazabilidad de la información
@@ -33,14 +36,22 @@
 | Xbox Wire / cloud | 24-11-2026, 15:35-15:45 CET | 10-11-2026 y 23-11-2026 |
 | Topic `reverse-engineer-anything` | 24-11-2026, 15:30-15:45 CET; recuento a las 19:00 CET | n/d |
 
-### Estado a esta hora (24-11-2026, 19:00 CET)
+<!-- AUTO:STATUS:START -->
+### Estado a esta hora (actualizado automáticamente)
+
+**Última actualización:** 24-11-2026, 19:30 CET (Europe/Madrid).
 
 - **GTA VI:** lanzado el 19-11-2026 en PS5 y Xbox Series X|S; sin versión PC anunciada.
 - **Port no oficial:** ningún proyecto público es jugable; el mejor estado es menús y carga de mundo en negro.
-- **Repositorios:** XCL y VIctory siguen activos; el Leonida original cerró el 23-11 y hay al menos seis continuaciones.
-- **Cambio de nombre:** XCL pasó de `ivall/xcl` a `xcl-dev/xcl`; GitHub redirige la URL antigua.
+- **GitHub:** `gta 6` 20.431 · `gta6` 17.609 · `leonida` 2.805 · `topic:gta6` 1.119.
+- **XCL:** 7,4k estrellas · 1.068 issues+PRs · último push 2026-11-24.
+- **VIctory:** 10,4k estrellas · 1.249 issues+PRs · último push 2026-11-24.
+- **Leonida:** 1,6k estrellas · 846 issues+PRs · último push 2026-11-24.
 - **Legal:** Take-Two mantiene retiradas por DMCA; la DMCA del 18-11 es de GTA V (Muguet), no de GTA VI.
 - **Cloud:** GTA VI en Xbox Cloud Gaming solo para consolas Xbox; en PC solo Remote Play desde una consola.
+
+[Detalle completo](ESTADO.md) · [Datos JSON](data/status.json)
+<!-- AUTO:STATUS:END -->
 
 ---
 
