@@ -52,6 +52,7 @@ REPOS = [
     "OnlyMoisties/GTA6-BootTest",
     "californiaAlmonds/OpenScarlett",
     "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
+    "4lwayz/portwatch-vi",
 ]
 
 TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")

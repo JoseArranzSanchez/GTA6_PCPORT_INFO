@@ -3,7 +3,8 @@
 **Document:** technical, market and legal research on the state of the unofficial GTA VI PC port.
 **Audience:** anyone interested in the topic, with no prior knowledge required.
 **Data cut-off:** 24 November 2026, 19:00 CET (18:00 UTC).
-**Last review:** 24-11-2026, 19:00 CET.
+**Last review:** 25-11-2026, 01:50 CET.
+**Last addition:** PortWatch VI, 24-11-2026, 20:27 CET.
 **Nature:** documentation and research. Not legal advice.
 
 > **Important notice**
@@ -21,6 +22,7 @@
 - **Limitations:** project statuses are self-reported and have not been independently reproduced. GitHub figures change daily and include noise.
 - **Tools:** this document was produced with the help of **OpenCode** (AI agent) and the **DeepSeek V4.1 Flash 1017** model, with human review by the maintainer.
 - **Automatic updates:** the "Status right now" block, [`STATUS.md`](STATUS.md) and [`data/status.json`](data/status.json) are regenerated every hour by GitHub Actions. The rest of the document is manually curated with a 24-11-2026, 19:00 CET cut-off.
+- **Last addition (24-11-2026, 20:27 CET):** PortWatch VI, an external progress tracker and its repository, covered in section 3.6.
 - **Scope of automation:** GitHub metrics only (searches, stars, issues and last push). Press, legal, analysis and contacts are manually curated.
 - **Force an update:** on GitHub, **Actions → Update status → Run workflow**. The cron runs every hour at minute 0 (UTC).
 - **Time zone:** Europe/Madrid (CET, UTC+1).
@@ -35,18 +37,19 @@
 | DMCA and legal | 24-11-2026, 15:35-15:45 CET | 18-11-2026 and 19-02-2021 |
 | Xbox Wire / cloud | 24-11-2026, 15:35-15:45 CET | 10-11-2026 and 23-11-2026 |
 | Topic `reverse-engineer-anything` | 24-11-2026, 15:30-15:45 CET; count refreshed at 19:00 CET | n/d |
+| PortWatch VI | 24-11-2026, 20:27 CET | 24-11-2026 (Notebookcheck article) / live data |
 
 <!-- AUTO:STATUS:START -->
 ### Status right now (auto-updated)
 
-**Last update:** 25-11-2026, 13:36 CET (Europe/Madrid).
+**Last update:** 25-11-2026, 21:59 CET (Europe/Madrid).
 
 - **GTA VI:** released on 19-11-2026 on PS5 and Xbox Series X|S; no PC version announced.
 - **Unofficial port:** no public project is playable; the best state is menus and a black world load.
-- **GitHub:** `gta 6` 20,563 · `gta6` 17,653 · `leonida` 2,811 · `topic:gta6` 1,110.
-- **XCL:** 8.1k stars · 1,471 issues+PRs · last push 2026-11-25.
-- **VIctory:** 12.0k stars · 1,494 issues+PRs · last push 2026-11-25.
-- **Leonida:** 2.1k stars · 1,276 issues+PRs · last push 2026-11-25.
+- **GitHub:** `gta 6` 20,639 · `gta6` 17,690 · `leonida` 2,833 · `topic:gta6` 1,116.
+- **XCL:** 8.3k stars · 1,555 issues+PRs · last push 2026-11-25.
+- **VIctory:** 12.5k stars · 1,814 issues+PRs · last push 2026-11-25.
+- **Leonida:** 2.3k stars · 1,486 issues+PRs · last push 2026-11-25.
 - **Legal:** Take-Two continues DMCA takedowns; the 18-11 notice is about GTA V (Muguet), not GTA VI.
 - **Cloud:** GTA VI on Xbox Cloud Gaming is console-only; on PC only Remote Play from a console.
 
@@ -63,6 +66,7 @@
 4. **Running the leaked build locally is not viable with €0 or without a PC.** Not for lack of talent, but because it needs Windows hardware with a 16 GB GPU, the leaked game (illegal) and months or years of team work.
 5. **What is possible with €0:** learning reverse engineering with free tools and legal targets, and contributing to open-source projects by compiling and running tests in the cloud (no hardware).
 6. **The cheapest way to play GTA VI in Spain:** a used Xbox One + the game + Xbox Cloud Gaming hours (cloud is only enabled on Xbox consoles), or a used Series S. From a laptop you can use **Remote Play** from a console that has the game.
+7. **External tracking:** PortWatch VI monitors ~30 projects and also answers "not yet". Its top entry (CGBJ, 72%) is a private build that nobody outside the group can reproduce.
 
 ---
 
@@ -172,15 +176,15 @@
 
 ### 3.1. What is on GitHub, in numbers
 
-Searches run against the GitHub API on **24-11-2026 at 19:00 CET (18:00 UTC)**. The numbers change every hour:
+Searches run against the GitHub API on **24-11-2026 at 20:27 CET (19:27 UTC)**. The numbers change every hour:
 
 | Search | Results |
 |---|---:|
-| `gta 6` (name, description, README) | 20,426 |
-| `gta6` | 17,609 |
-| `leonida` | 2,803 |
-| `"grand theft auto vi"` | 417 |
-| `topic:gta6` | 1,118 |
+| `gta 6` (name, description, README) | 20,437 |
+| `gta6` | 17,616 |
+| `leonida` | 2,804 |
+| `"grand theft auto vi"` | 418 |
+| `topic:gta6` | 1,121 |
 | `topic:xbox-series-x` | 63 |
 | `topic:reverse-engineer-anything` | 20 |
 
@@ -249,6 +253,22 @@ Quick checklist:
 - **Claims:** "GTA 6 PC 2026", "preload included", "no BIOS", "DLSS 5", "120 fps" → scam keywords.
 - **Game files:** if the repo includes the .exe, keys or assets, it is direct infringement. If it says "bring your own copy", it is still a legal risk (see section 5).
 - **VirusTotal:** the video itself cites a case with **34/68 detections**.
+
+### 3.6. PortWatch VI: external progress tracker
+
+[PortWatch VI](https://portwatch-vi.xyz/) is a separate, fan-made tracker that aggregates community GTA VI recompilation and emulation efforts on one ladder.
+
+- **Site:** https://portwatch-vi.xyz/
+- **Repository:** https://github.com/4lwayz/portwatch-vi
+- **Machine-readable data:** https://portwatch-vi.xyz/data/tracker.json (refreshed every 3 hours by its scout)
+- **What it tracks:** ~30 projects, a leaderboard, news, a watchlist of early efforts, an asset-toolkit section and a fake-download warning page.
+- **Status at 24-11-2026, 20:27 CET:** the site answers "Not yet". Its leaderboard is topped by CGBJ at 72% (a private build; PortWatch says it verified in-game movement, but the code is not public and nobody outside the group can reproduce it). The public projects are still around the menus/world-load stage.
+- **Method and caveat:** scores come from each project's public README, commits and issues; self-reported claims are labelled. It is not independent verification, and the leaderboard can change every 3 hours. The site states that it does not host or link game files, keys or executables.
+- **Repository data at 20:27 CET:** 2.5k stars, 58 forks, 42 open issues.
+- **Press:** Notebookcheck covered the tracker on 24-11-2026: https://www.notebookcheck.net/GTA-6-This-website-lets-you-track-the-PC-recompilation-live.1458797.0.html
+- **Credits:** 4lwayz (maintainer) and the tracker's X account, [@lithuaniangroyp](https://x.com/lithuaniangroyp).
+
+For the live GitHub metrics of PortWatch's repository, see [`STATUS.md`](STATUS.md).
 
 ---
 
@@ -564,6 +584,10 @@ All links in this appendix were checked on **24-11-2026 between 15:20 and 15:45 
 - XDA (hoax): https://www.xda-developers.com/that-viral-gta-6-pc-port-video-hoax-made-from-recycled-gta-5-footage/
 - Notebookcheck (DLSS 5): https://www.notebookcheck.net/GTA-6-PS5-Pro-performance-jumps-to-280-fps-on-PC-with-DLSS-5-transforming-Lucia.1453555.0.html
 - Tracker: https://vuyp.github.io/gta6-pc-race/
+- PortWatch VI: https://portwatch-vi.xyz/
+- PortWatch VI repository: https://github.com/4lwayz/portwatch-vi
+- PortWatch VI data: https://portwatch-vi.xyz/data/tracker.json
+- Notebookcheck (PortWatch): https://www.notebookcheck.net/GTA-6-This-website-lets-you-track-the-PC-recompilation-live.1458797.0.html
 
 ### 9.2. Ecosystem repos
 
@@ -585,6 +609,7 @@ All links in this appendix were checked on **24-11-2026 between 15:20 and 15:45 
 - https://github.com/fablinoo/palmwave
 - https://github.com/ubiquitarianism/leonida
 - https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering
+- https://github.com/4lwayz/portwatch-vi
 - https://github.com/TrinitronClient/GTA6-Asset-Info
 - https://github.com/breadbbbb/rpf9-explorer
 - https://github.com/rpatty-dev/PercyStar
@@ -703,6 +728,7 @@ Public channels of the projects and the people who maintain them. **The recommen
 | **XValkyrie** | [@sammwyy](https://github.com/sammwyy) | [X/Twitter](https://x.com/sammwyy) | [Web](https://sammwy.com/) |
 | **GTA6-BootTest** | [@OnlyMoisties](https://github.com/OnlyMoisties) | [Issues](https://github.com/OnlyMoisties/GTA6-BootTest/issues) | [Repo](https://github.com/OnlyMoisties/GTA6-BootTest) |
 | **awesome-gta6-RE** | [@Ahmet-Dedeler](https://github.com/Ahmet-Dedeler) | [Discord](https://discord.gg/CjcDBg3nf) | [X/Twitter](https://x.com/ahmetbuilds) |
+| **PortWatch VI** | [@4lwayz](https://github.com/4lwayz) | [X/Twitter](https://x.com/lithuaniangroyp) | [Repo](https://github.com/4lwayz/portwatch-vi) · [Site](https://portwatch-vi.xyz/) |
 | **GTA6-Asset-Info** | [@TrinitronClient](https://github.com/TrinitronClient) | [Issues](https://github.com/TrinitronClient/GTA6-Asset-Info/issues) | [Repo](https://github.com/TrinitronClient/GTA6-Asset-Info) |
 | **rpf9-explorer** | [@breadbbbb](https://github.com/breadbbbb) | [Issues](https://github.com/breadbbbb/rpf9-explorer/issues) | [Repo](https://github.com/breadbbbb/rpf9-explorer) |
 | **PercyStar** | [@rpatty-dev](https://github.com/rpatty-dev) | [Issues](https://github.com/rpatty-dev/PercyStar/issues) | [Web](https://nitech.dev) |
@@ -768,6 +794,7 @@ This document would not be possible without the work of the following people and
 - **Leonida** and its continuations: `ubiquitarianism/leonida`, `ProjectLeonidaL/leonida`, `LeonidaReforge/Leonida`, `avivetech/Leonida`, `luizwidmer/palmetto`, `IAmNotSiob/leonida-ce`, `Cappi1998/LONDBackup`.
 - **AnyXboxX** (`LooperSalty/AnyXboxX`), **OpenScarlett** (`californiaAlmonds/OpenScarlett`), **XValkyrie** (`sammwyy/xvalkyrie`), **zenith-x** (`TrinitronClient/zenith-x`), **palmwave** (`fablinoo/palmwave`).
 - **awesome-gta6-reverse-engineering** (`Ahmet-Dedeler`), **GTA6-Asset-Info** (`TrinitronClient`), **rpf9-explorer** (`breadbbbb`), **PercyStar** (`rpatty-dev`), **SixNG** (`holdmysocks`), **bcpack-rs** (`Ahmet-Dedeler`).
+- **PortWatch VI** (`4lwayz/portwatch-vi`), an external progress tracker; its leaderboard and data are cited with its own caveats.
 - **Cyberleek/Cyberleak**: the group that published the leaked material. It is mentioned for journalistic context; no technical credit is attributed to it and its content is not linked.
 
 ### Tools and data

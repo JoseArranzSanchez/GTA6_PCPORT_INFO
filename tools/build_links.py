@@ -121,6 +121,20 @@ CONTACTS = [
     ("Contact", "Code Bear — Instagram", "https://instagram.com/thecodebear", "Published in the description"),
     ("Contact", "This repository — maintainer", "https://github.com/JoseArranzSanchez", "GitHub"),
     ("Contact", "This repository — issues", "https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO/issues", "Contact"),
+    ("Contact", "PortWatch VI — maintainer", "https://github.com/4lwayz", "Project GitHub"),
+    ("Contact", "PortWatch VI — X/Twitter", "https://x.com/lithuaniangroyp", "Tracker account"),
+]
+
+TRACKERS = [
+    ("Tracker", "PortWatch VI — site", "https://portwatch-vi.xyz/", "Live tracker"),
+    ("Tracker", "PortWatch VI — repository", "https://github.com/4lwayz/portwatch-vi", "Source code"),
+    ("Tracker", "PortWatch VI — data", "https://portwatch-vi.xyz/data/tracker.json", "Machine-readable data"),
+    (
+        "Press",
+        "Notebookcheck — PortWatch VI",
+        "https://www.notebookcheck.net/GTA-6-This-website-lets-you-track-the-PC-recompilation-live.1458797.0.html",
+        "Published 24-11-2026",
+    ),
 ]
 
 
@@ -151,7 +165,7 @@ def main() -> None:
     # Rebuild the contact block in English instead of keeping the old Spanish rows.
     rows = [row for row in rows if row["category"] != "Contact"]
     existing = {(row["category"], row["name"]) for row in rows}
-    for category, name, url, note in CONTACTS:
+    for category, name, url, note in TRACKERS + CONTACTS:
         if (category, name) not in existing:
             rows.append({"category": category, "name": name, "url": url, "note": note})
 

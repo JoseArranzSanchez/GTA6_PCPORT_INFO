@@ -50,6 +50,8 @@ If your spreadsheet does not evaluate `=HYPERLINK()`, use the `url` column or th
 | Code Bear — Instagram | [Open](https://instagram.com/thecodebear) | Published in the description |
 | This repository — maintainer | [Open](https://github.com/JoseArranzSanchez) | GitHub |
 | This repository — issues | [Open](https://github.com/JoseArranzSanchez/GTA6_PCPORT_INFO/issues) | Contact |
+| PortWatch VI — maintainer | [Open](https://github.com/4lwayz) | Project GitHub |
+| PortWatch VI — X/Twitter | [Open](https://x.com/lithuaniangroyp) | Tracker account |
 
 ## Learn
 
@@ -100,6 +102,7 @@ If your spreadsheet does not evaluate `=HYPERLINK()`, use the `url` column or th
 | XDA hoax recycled GTA V | [Open](https://www.xda-developers.com/that-viral-gta-6-pc-port-video-hoax-made-from-recycled-gta-5-footage/) | Blocks bots |
 | Notebookcheck PS5 Pro DLSS 5 | [Open](https://www.notebookcheck.net/GTA-6-PS5-Pro-performance-jumps-to-280-fps-on-PC-with-DLSS-5-transforming-Lucia.1453555.0.html) | — |
 | Basic Tutorials VirusTotal | [Open](https://basic-tutorials.com/news/gta-6-pc-cyberleek-releases-xbox-exe-leonida-port-remains-unreleased/) | — |
+| Notebookcheck — PortWatch VI | [Open](https://www.notebookcheck.net/GTA-6-This-website-lets-you-track-the-PC-recompilation-live.1458797.0.html) | Published 24-11-2026 |
 
 ## REA
 
@@ -188,3 +191,6 @@ If your spreadsheet does not evaluate `=HYPERLINK()`, use the `url` column or th
 | Name | Link | Note |
 |---|---|---|
 | GTA6 PC race | [Open](https://vuyp.github.io/gta6-pc-race/) | Self-reported claims |
+| PortWatch VI — site | [Open](https://portwatch-vi.xyz/) | Live tracker |
+| PortWatch VI — repository | [Open](https://github.com/4lwayz/portwatch-vi) | Source code |
+| PortWatch VI — data | [Open](https://portwatch-vi.xyz/data/tracker.json) | Machine-readable data |

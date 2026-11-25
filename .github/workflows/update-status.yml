@@ -4,6 +4,8 @@ on:
   schedule:
     # Every hour at minute 0 (UTC). GitHub may delay it by a few minutes.
     - cron: "0 * * * *"
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
