@@ -1,62 +1,62 @@
 {
-  "generated_at_utc": "2026-11-27T07:32:11+00:00",
-  "generated_at_local": "2026-11-27T08:32:11+01:00",
+  "generated_at_utc": "2026-11-27T17:57:05+00:00",
+  "generated_at_local": "2026-11-27T18:57:05+01:00",
   "timezone": "Europe/Madrid",
   "timezone_label": "CET",
   "source": "GitHub API",
   "counts": {
-    "gta 6": 20774,
-    "gta6": 17797,
-    "leonida": 2878,
-    "\"grand theft auto vi\"": 363,
-    "topic:gta6": 1135,
-    "topic:xbox-series-x": 77,
+    "gta 6": 20773,
+    "gta6": 17795,
+    "leonida": 2883,
+    "\"grand theft auto vi\"": 365,
+    "topic:gta6": 1141,
+    "topic:xbox-series-x": 79,
     "topic:reverse-engineer-anything": 20
   },
   "repos": {
     "xcl-dev/xcl": {
       "full_name": "xcl-dev/xcl",
       "html_url": "https://github.com/xcl-dev/xcl",
-      "stars": 8643,
-      "forks": 1207,
-      "open_issues": 1927,
-      "pushed_at": "2026-11-27T07:10:06Z",
+      "stars": 8703,
+      "forks": 1213,
+      "open_issues": 1966,
+      "pushed_at": "2026-11-27T16:16:53Z",
       "archived": false
     },
     "Marvisak/VIctory": {
       "full_name": "Marvisak/VIctory",
       "html_url": "https://github.com/Marvisak/VIctory",
-      "stars": 13516,
-      "forks": 2282,
-      "open_issues": 2174,
+      "stars": 13714,
+      "forks": 2338,
+      "open_issues": 2243,
       "pushed_at": "2026-11-25T23:27:48Z",
       "archived": false
     },
     "ubiquitarianism/leonida": {
       "full_name": "ubiquitarianism/leonida",
       "html_url": "https://github.com/ubiquitarianism/leonida",
-      "stars": 2555,
-      "forks": 587,
-      "open_issues": 1547,
-      "pushed_at": "2026-11-27T03:17:00Z",
+      "stars": 2612,
+      "forks": 588,
+      "open_issues": 1528,
+      "pushed_at": "2026-11-27T17:56:46Z",
       "archived": false
     },
     "R0Y00/Xbox2Windows": {
       "full_name": "R0Y00/Xbox2Windows",
       "html_url": "https://github.com/R0Y00/Xbox2Windows",
-      "stars": 1974,
-      "forks": 237,
-      "open_issues": 235,
-      "pushed_at": "2026-11-27T07:22:11Z",
+      "stars": 2034,
+      "forks": 246,
+      "open_issues": 246,
+      "pushed_at": "2026-11-27T17:48:43Z",
       "archived": false
     },
     "LooperSalty/AnyXboxX": {
       "full_name": "LooperSalty/AnyXboxX",
       "html_url": "https://github.com/LooperSalty/AnyXboxX",
-      "stars": 456,
-      "forks": 83,
-      "open_issues": 112,
-      "pushed_at": "2026-11-27T02:51:06Z",
+      "stars": 507,
+      "forks": 91,
+      "open_issues": 107,
+      "pushed_at": "2026-11-27T17:19:22Z",
       "archived": false
     },
     "OnlyMoisties/GTA6-BootTest": {
@@ -80,8 +80,8 @@
     "Ahmet-Dedeler/awesome-gta6-reverse-engineering": {
       "full_name": "Ahmet-Dedeler/awesome-gta6-reverse-engineering",
       "html_url": "https://github.com/Ahmet-Dedeler/awesome-gta6-reverse-engineering",
-      "stars": 805,
-      "forks": 48,
+      "stars": 823,
+      "forks": 50,
       "open_issues": 2,
       "pushed_at": "2026-11-26T22:26:05Z",
       "archived": false
@@ -89,10 +89,10 @@
     "4lwayz/portwatch-vi": {
       "full_name": "4lwayz/portwatch-vi",
       "html_url": "https://github.com/4lwayz/portwatch-vi",
-      "stars": 6084,
-      "forks": 174,
-      "open_issues": 212,
-      "pushed_at": "2026-11-27T04:23:49Z",
+      "stars": 6496,
+      "forks": 184,
+      "open_issues": 229,
+      "pushed_at": "2026-11-27T16:20:59Z",
       "archived": false
     }
   },
