@@ -42,14 +42,14 @@
 <!-- AUTO:STATUS:START -->
 ### Status right now (auto-updated)
 
-**Last update:** 27-11-2026, 00:34 CET (Europe/Madrid).
+**Last update:** 27-11-2026, 08:32 CET (Europe/Madrid).
 
 - **GTA VI:** released on 19-11-2026 on PS5 and Xbox Series X|S; no PC version announced.
 - **Unofficial port:** no public project is playable; the best state is menus and a black world load.
-- **GitHub:** `gta 6` 20,759 · `gta6` 17,775 · `leonida` 2,869 · `topic:gta6` 1,134.
-- **XCL:** 8.6k stars · 1,899 issues+PRs · last push 2026-11-26.
-- **VIctory:** 13.3k stars · 2,112 issues+PRs · last push 2026-11-25.
-- **Leonida:** 2.5k stars · 1,541 issues+PRs · last push 2026-11-26.
+- **GitHub:** `gta 6` 20,774 · `gta6` 17,797 · `leonida` 2,878 · `topic:gta6` 1,135.
+- **XCL:** 8.6k stars · 1,927 issues+PRs · last push 2026-11-27.
+- **VIctory:** 13.5k stars · 2,174 issues+PRs · last push 2026-11-25.
+- **Leonida:** 2.6k stars · 1,547 issues+PRs · last push 2026-11-27.
 - **Legal:** Take-Two continues DMCA takedowns; the 18-11 notice is about GTA V (Muguet), not GTA VI.
 - **Cloud:** GTA VI on Xbox Cloud Gaming is console-only; on PC only Remote Play from a console.
 
